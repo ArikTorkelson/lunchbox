@@ -1,0 +1,119 @@
+@import '../../styles/base.scss';
+
+.roadmap {
+  background: $bg-color;
+  border: 1px solid $accent-color;
+  padding: 96px 88px;
+  @include breakpoint {
+    border: none;
+    padding: 48px 16px;
+  }
+  
+  &__content-container {
+    display: grid;
+    grid-template-columns: 6fr 1fr 5fr;
+    margin-bottom: 96px;
+    @include breakpoint {
+      grid-template-columns: 12fr;
+      margin-bottom: 0px;
+    }
+  }
+
+  &__roadmap-content {
+    padding-left: 74.5px;
+    @include breakpoint {
+      padding-left: 24px;
+    }
+  }
+
+  &__roadmap-item:not(:last-child) {
+    border-left: 1px solid $accent-color;
+    padding-bottom: 32px;
+  }
+
+  &__headline {
+    font-size: 48px;
+    padding-bottom: 48px;
+  }
+
+  &__title {
+    padding-bottom: 8px;
+    font-size: 27px;
+    line-height: 27px;
+  }
+
+  &__body {
+    font-size: 21px;
+    line-height: 27px;
+  }
+
+  &__label {
+    position: relative;
+  }
+
+  &__label-number {
+    background: $bg-color;
+    border: 1px solid $accent-color;
+    border-radius: 50%;
+    height: 26px;
+    width: 26px;
+    position: absolute;
+    left: -14px;
+    top: -6px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--completed {
+      color: $bg-color;
+      background: $primary-color;
+    }
+  }
+
+  &__label-number-text {
+    padding-top: 3px;
+  }
+
+  &__image-container {
+    @include breakpoint {
+      padding-top: 48px;
+    }
+  }
+
+  &__image {
+    border: 1px solid $accent-color;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  &__faq {
+    padding-top: 96px;
+
+    &-title {
+      font-size: 48px;
+      line-height: 48px;
+      padding-bottom: 32px;
+    }
+    &-container {
+      margin-bottom: 36px;
+    }
+    &-question {
+      cursor: pointer;
+      font-size: 27px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid $primary-color;
+      width: max-content;
+      max-width: 100%;
+
+      &--remove-border {
+        border-bottom: none;
+      }
+    }
+    &-answer {
+      border-bottom: 2px solid $primary-color;
+      padding: 8px 0 4px;
+      font-size: 21px;
+    }
+  }
+}

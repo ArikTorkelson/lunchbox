@@ -1,0 +1,46 @@
+@import '../../styles/base.scss';
+
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 96px 0 154px;
+  flex-direction: column;
+  background-image: url('../../images/sirocco-discord-cta.jpg');
+  background-size: cover;
+  cursor: pointer;
+  @include breakpoint {
+    display: none;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 48px;
+    width: 620px;
+  }
+
+  &--small {
+    background: $cta-color;
+    padding: 50px 48px;
+    flex-direction: row;
+
+    & .cta__title {
+      font-size: 27px;
+      line-height: 27px;
+      text-align: left;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.cta-breakpoint {
+  @media (min-width: 940px) { display: none; }
+  padding-top: 64px;
+  &__title {
+    font-size: 27px;
+    font-weight: 700;
+    padding-bottom: 24px;
+  }
+}

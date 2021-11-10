@@ -1,0 +1,18 @@
+@import 'reset.scss';
+
+// colors
+$bg-color: #E3E2D9;
+$primary-color: #41456C;
+$secondary-color: $bg-color;
+$accent-color: #C1BB99;
+$discord-color: #D84424;
+$cta-color: #D6D2BE;
+
+// spacing
+$content-max-width: 1230px;
+$site-max-width: 1440px; 
+
+// breakpoint
+@mixin breakpoint {
+  @media (max-width: 940px) { @content ; }
+}
