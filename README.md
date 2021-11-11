@@ -1,54 +1,60 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  Gatsby minimal starter
+  Sirocco
 </h1>
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
-
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
-
-2.  **Start developing.**
+1.  **Start developing**
 
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd my-gatsby-site/
+    cd sirocco/
     npm run develop
     ```
 
-3.  **Open the code and start customizing!**
+    From here you can start developing with hot-reloading enabled.
+
+2.  **Open the code and start customizing**
 
     Your site is now running at http://localhost:8000!
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+    Each page that exists in the `/src/pages` folder automagically creates a new page with an associated path, so right now we have:
 
-4.  **Learn more**
+    ```
+    /index.js --> siroccogame.io/
+    /roadmaps.js --> siroccogame.io/roadmap
+    /404.js --> siroccogame.io/404
+    ```
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    Each page then renders the `<Layout />` component as the wrapper for the page and then has a content component like `<Homepage />` or `<Roadmap />`. Each component has an associated SCSS file for styling purposes. We use [BEM](https://css-tricks.com/bem-101/) methodology for styling.
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    NOTE: All values that are repeated should be put in the `/src/styles/base.scss` file.
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    We use [Contentful](https://www.contentful.com/) for the majority of our content. As you'll see in files like `/src/components/homepage/homepage.js`, we use Contentful's GraphQL API to pull in the content for the page and then render it.
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    NOTE: When you run the above `npm run develop` command, you can also navigate over the GraphQL visually at `http://localhost:8000/___graphql`. Read more at the docs [here](https://www.gatsbyjs.com/docs/how-to/querying-data/running-queries-with-graphiql/).
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+3.  **Redirects**
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    This app uses Netlfiy for deploying / hosting, so we use their logic for redirects which you can read more about [here](https://docs.netlify.com/routing/redirects/). In the `/static/_redirects` file, you can find the redirects for the site. The redirects file MUST live in the `/static` folder since Gatsby takes the files in that folder, and builds them into the production `/public` folder that is used in the deploy.
 
-## 🚀 Quick start (Gatsby Cloud)
+4.  **Building the site and deploying**
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+    Once the site is operating / looking how you like, you can build it and deploy it from the command line.
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+    To build a production deploy of the site use:
+
+    `gatsby build`
+
+    And to then deploy to Netlify, assuming you've set up their CLI already, you use:
+
+    `npm run netlify:deploy`
+
+5.  **Learn more**
+
+    - [Gatsby Documentation](https://www.gatsbyjs.com/docs/)
+
+    - [Netlify Documentation](https://docs.netlify.com/)
+
+    - [Contentful GraphQL Documentation](https://www.contentful.com/developers/docs/references/graphql/)
