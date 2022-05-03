@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Diatype';
+  src:  url('../fonts/ABCDiatype-Regular.woff2') format('woff2'),
+        url('../fonts/ABCDiatype-Regular.woff') format('woff');
+}
+
+body {
+  font-family: 'Diatype', Arial, sans-serif;
+}

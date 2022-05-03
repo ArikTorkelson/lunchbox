@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.yourdomain.tld',
-    title: 'Sirocco',
+    title: 'Lunchbox',
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -10,23 +10,17 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        accessToken: 'GlSV-Pm8fKBoj2mDhTwabG2BpLf9lRqU-tq4ZWl4GyY',
-        spaceId: '0hfzo9l01m95',
+        accessToken: '1UTRfSb-ddPB0qtqQmT5-TEyCZVMOIjWdGsbmM3fdwU',
+        spaceId: '5ywyur77omkg',
       },
     },
     'gatsby-plugin-sass',
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'G-4GGK7P9HJ0',
-      },
-    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/sirocco-logo.svg',
+        icon: 'src/images/lunchbox-logo.svg',
       },
     },
   ],

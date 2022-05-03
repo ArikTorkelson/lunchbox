@@ -1,14 +1,10 @@
 import * as React from 'react';
 import Homepage from '../components/homepage/homepage';
-import Layout from '../components/layout/layout';
+import '../styles/layout.scss';
 
 // markup
 const IndexPage = () => {
-  return (
-    <Layout>
-      <Homepage />
-    </Layout>
-  );
+  return <Homepage />;
 };
 
 export default IndexPage;

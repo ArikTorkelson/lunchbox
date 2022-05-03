@@ -1,18 +1,32 @@
 @import 'reset.scss';
 
-// colors
-$bg-color: #E3E2D9;
-$primary-color: #41456C;
-$secondary-color: $bg-color;
-$accent-color: #C1BB99;
-$discord-color: #D84424;
-$cta-color: #D6D2BE;
+p {
+  font-size: 14px;
+}
 
+// colors
+$text-color: #080D36;
+$background-color: #F3F6F8;
+$secondary-color: #98A9AF;
+$tertiary-color: #CCD7DB;
 // spacing
-$content-max-width: 1230px;
-$site-max-width: 1440px; 
+$max-width: 1200px;
 
 // breakpoint
-@mixin breakpoint {
-  @media (max-width: 940px) { @content ; }
+
+
+// Swiper overrides
+
+.swiper {
+  height: 500px;
+  padding-bottom: 25px;
+}
+
+.swiper-slide {
+  width: auto !important;
+}
+
+.swiper-slide img {
+  width: auto;
+  height: 100%;
 }

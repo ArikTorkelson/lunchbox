@@ -1,8 +1,8 @@
 {
-  "name": "sirocco",
+  "name": "lunchbox",
   "version": "1.0.0",
   "private": true,
-  "description": "Sirocco",
+  "description": "Lunchbox",
   "keywords": [
     "gatsby"
   ],
@@ -30,7 +30,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "sass": "^1.43.4"
+    "sass": "^1.43.4",
+    "swiper": "^8.1.4"
   },
   "devDependencies": {
     "contentful-import": "^7.8.6",

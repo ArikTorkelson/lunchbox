@@ -1,116 +1,249 @@
 @import '../../styles/base.scss';
 
 .homepage {
-  background: $bg-color;
-  padding: 0 88px;
-  border: 1px solid $accent-color;
-  @include breakpoint {
-    border: none;
-    padding: 0 16px;
-  }
-  animation: 2100ms slideInFromBottomDesktop;
-  @keyframes slideInFromBottomDesktop {
-    0% {
-      transform: translateY(80%);
-    }
-    20% {
-      transform: translateY(80%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  @include breakpoint {
-    animation: 1000ms slideInFromBottomSmallDevice;
-  }
-  @keyframes slideInFromBottomSmallDevice {
-    0% {
-      transform: translateY(20%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  
+  background-color: $background-color;
+}
 
-  &__hero {
+.content {
+  max-width: $max-width;
+  margin: 0 auto;
+  position: relative;
+}
+
+.navbar {
+  padding: 48px 50px;
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    text-decoration: none;
+
+    &:not(:first-child) {
+      margin-left: 64px;
+    }
+  }
+}
+
+.sidebar {
+  position: absolute;
+  left: 0;
+  top: 48px;
+}
+
+.section {
+  padding: 80px 160px;
+  position: relative;
+}
+
+.section--no-right-padding {
+  padding-right: 0px;
+}
+
+.hero {
+  font-size: 64px;
+  font-weight: 400;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featurettes {
+  display: flex;
+
+  &__item {
+    margin-right: 48px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__icon {
+    height: 164px;
+    width: 164px;
+  }
+
+  &__title {
+    font-size: 24px;
+    margin: 24px 0;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+  }
+}
+
+.newsletter {
+  &__title {
+    font-size: 32px;
+  }
+
+  &__form {
+    background: white;
+    border: 1px solid $tertiary-color;
+    position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding-bottom: 94px;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 108px;
+    width: 780px;
+    margin-top: 24px;
 
-    &-title {
-      font-size: 48px;
-      padding: 48px 0 32px;
-    } 
-    &-body {
-      font-size: 21px;
-      line-height: 27px;
-      max-width: 696px;
-      padding-bottom: 44px;
-    }
-    &-img {
+    &::before {
+      display: inline-block;
       width: 100%;
-      outline: 1px solid $accent-color;
-      outline-offset: -8px;
+      height: 100%;
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 4px;
+      border-right: 1px solid $tertiary-color;
+      border-bottom: 1px solid $tertiary-color;
+    }
+  
+    &::after {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 8px;
+      border-right: 1px solid $tertiary-color;
+      border-bottom: 1px solid $tertiary-color;
+    }
+
+    input {
+      background: none;
+      border: none;
+      font-size: 24px;
+      z-index: 99;
+
+      &[type=submit] {
+        cursor: pointer;
+      }
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
     }
   }
+}
 
-  &__about-item {
-    border-top: 2px solid $accent-color;
-    display: grid;
-    padding: 48px 0 96px;
-    @include breakpoint {
-      padding: 48px 0 64px;
+.partners {
+  background: white;
+  display: flex;
+  height: 228px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 64px;
+
+  &__title {
+    font-size: 32px;
+    width: 320px;
+  }
+
+  img {
+    height: 72px;
+  }
+}
+
+.jobs {
+  &__headline {
+    font-size: 32px;
+    margin-bottom: 48px;
+  }
+
+  &__card {
+    border: 1px solid $tertiary-color;
+    height: 128px;
+    width: 100%;
+    position: relative;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    &::before {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 3px;
+      border: 1px solid $tertiary-color;
+      z-index: -1;
+    }
+  
+    &::after {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: -1px;
+      border: 1px solid $tertiary-color;
+      z-index: -1;
     }
 
-    &-content {
+    &-text-container {
       display: flex;
       flex-direction: column;
-      justify-content: center;
     }
 
     &-title {
-      font-size: 48px;
-      padding-bottom: 16px;
+      font-size: 14px;
+      color: $secondary-color;
     }
 
     &-body {
-      font-size: 21px;
-      line-height: 27px;
-      @include breakpoint {
-        padding-bottom: 32px;
-      }
+      font-size: 24px;
+      margin-top: 20px;
     }
 
-    &-image {
-      width: 100%;
-      outline: 1px solid $accent-color;
-      outline-offset: -8px;
+    &-apply {
+      border: 1px solid $secondary-color;
+      border-radius: 54px;
+      padding: 12px 16px 10px;
+      cursor: pointer;
+    }
+  }
+}
+
+.footer {
+  background: #E5E9EC;
+  height: 182px;
+  padding: 40px 0 28px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    max-width: $max-width;
+    margin: 0 auto;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      display: flex;
     }
 
-    &-caption {
-      font-size: 14px;
-      font-style: italic;
-      display: none;
+    p {
+      margin-right: 100px;
     }
 
-    &--left {
-      grid-template-columns: 6fr 1fr 5fr;
-      @include breakpoint {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-
-    &--right {
-      grid-template-columns: 5fr 1fr 6fr;
-      @include breakpoint {
-        display: flex;
-        flex-direction: column-reverse;
-
-      }
+    img {
+      margin-left: 24px;
     }
   }
 }
