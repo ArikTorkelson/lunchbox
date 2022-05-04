@@ -142,7 +142,7 @@ const Homepage = () => {
             name='newsletter'
           >
             <input type='email' name='email' placeholder='E-mail' />
-            <input type='submit' value='Submit' />
+            <button type='submit'>Submit</button>
           </form>
         </section>
         <section className='section section--no-right-padding'>
