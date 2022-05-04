@@ -83,13 +83,18 @@
     background: white;
     border: 1px solid $tertiary-color;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 0 48px;
     height: 108px;
     width: 780px;
-    margin-top: 24px;
+
+    div {
+      z-index: 1;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
 
     &::before {
       display: inline-block;
@@ -119,7 +124,7 @@
       background: none;
       border: none;
       font-size: 24px;
-      z-index: 99;
+      z-index: 1;
 
       &[type=submit] {
         cursor: pointer;

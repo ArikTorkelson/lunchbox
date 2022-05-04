@@ -141,8 +141,10 @@ const Homepage = () => {
             className='newsletter__form'
             name='newsletter'
           >
-            <input type='email' name='email' placeholder='E-mail' />
-            <button type='submit'>Submit</button>
+            <div>
+              <input type='email' name='email' placeholder='E-mail' />
+              <button type='submit'>Submit</button>
+            </div>
           </form>
         </section>
         <section className='section section--no-right-padding'>
