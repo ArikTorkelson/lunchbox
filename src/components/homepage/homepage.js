@@ -10,8 +10,8 @@ import TeamSwiper from '../teamSwiper/teamSwiper';
 
 import instagramLogo from '../../images/insta.svg';
 import discordLogo from '../../images/discord.svg';
-import lunchboxLogo from '../../images/Lunchbox-logo.svg';
-import lunchboxFooterLogo from '../../images/Lunchbox-logo-footer.svg';
+import lunchboxLogo from '../../images/lunchbox-logo.svg';
+import lunchboxFooterLogo from '../../images/lunchbox-logo-footer.svg';
 
 const Homepage = () => {
   const dataProductImageCarousel = useStaticQuery(graphql`
