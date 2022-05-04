@@ -141,10 +141,14 @@ const Homepage = () => {
             className='newsletter__form'
             name='newsletter'
           >
-            <div>
+            <input type='hidden' name='form-name' value='newsletter' />
+            <p>
               <input type='email' name='email' placeholder='E-mail' />
+            </p>
+            <p>
+              {' '}
               <button type='submit'>Submit</button>
-            </div>
+            </p>
           </form>
         </section>
         <section className='section section--no-right-padding'>
