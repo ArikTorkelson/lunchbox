@@ -23,7 +23,6 @@
 
     ```
     /index.js --> lunchboxgame.io/
-    /roadmaps.js --> lunchboxgame.io/roadmap
     /404.js --> lunchboxgame.io/404
     ```
 
