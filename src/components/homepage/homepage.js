@@ -79,7 +79,42 @@ const Homepage = () => {
   const homepageTeamMembers = homepageData.allContentfulTeamMember.nodes;
   const homepagePartners = homepageData.allContentfulPartner.nodes;
   const [jobListings, setJobListings] = useState([]);
+  const [activeSidebar, setActiveSidebar] = useState(0);
+  const sectionOne = useRef(null);
+  const sectionTwo = useRef(null);
+  const sectionThree = useRef(null);
+  const sectionFour = useRef(null);
+  const sectionFive = useRef(null);
+  const sectionSix = useRef(null);
+  const scrollOffset = 0;
+  const handleScroll = () => {
+    const windowOffset = scrollOffset + window.pageYOffset;
 
+    switch (true) {
+      case windowOffset < sectionOne.current.offsetTop:
+        setActiveSidebar(0);
+        break;
+      case windowOffset > sectionOne.current.offsetTop &&
+        windowOffset < sectionTwo.current.offsetTop:
+        setActiveSidebar(1);
+        break;
+      case windowOffset > sectionTwo.current.offsetTop &&
+        windowOffset < sectionThree.current.offsetTop:
+        setActiveSidebar(2);
+        break;
+      case windowOffset > sectionThree.current.offsetTop &&
+        windowOffset < sectionFour.current.offsetTop:
+        setActiveSidebar(3);
+        break;
+      case windowOffset > sectionFour.current.offsetTop &&
+        windowOffset < sectionFive.current.offsetTop:
+        setActiveSidebar(4);
+        break;
+      case windowOffset < sectionSix.current.offsetTop:
+        setActiveSidebar(5);
+        break;
+    }
+  };
   useEffect(() => {
     fetch('https://api.lever.co/v0/postings/LunchboxEntertainment?mode=json')
       .then((response) => {
@@ -89,16 +124,65 @@ const Homepage = () => {
         throw response;
       })
       .then((data) => {
-        console.log('data = ', data);
         setJobListings(data);
       });
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
-    <div className='homepage'>
+    <div className='homepage' onScroll={handleScroll}>
       <div className='content'>
         <div className='sidebar'>
           <img src={lunchboxLogo} />
+          <div className='sidebar__section'>
+            {activeSidebar === 0 && (
+              <div>
+                <p>01</p>
+                <hr />
+                <p>Our mission</p>
+              </div>
+            )}
+            {activeSidebar === 1 && (
+              <div>
+                <p>02</p>
+                <hr />
+                <p>Screenshots</p>
+              </div>
+            )}
+            {activeSidebar === 2 && (
+              <div>
+                <p>03</p>
+                <hr />
+                <p>Newsletter</p>
+              </div>
+            )}
+            {activeSidebar === 3 && (
+              <div>
+                <p>04</p>
+                <hr />
+                <p>Our Team</p>
+              </div>
+            )}
+            {activeSidebar === 4 && (
+              <div>
+                <p>05</p>
+                <hr />
+                <p>Partners</p>
+              </div>
+            )}
+            {activeSidebar === 5 && (
+              <div>
+                <p>06</p>
+                <hr />
+                <p>Careers</p>
+              </div>
+            )}
+          </div>
         </div>
         <header className='navbar'>
           <div className='navbar__left'>
@@ -110,13 +194,13 @@ const Homepage = () => {
             <a href='#'>Join the newsletter</a>
           </div>
         </header>
-        <section className='section hero'>
+        <section ref={sectionOne} className='section hero'>
           <h1>
             We are shaping the future of competitive gaming with a revolutionary
             *new* MOBA.
           </h1>
         </section>
-        <section className='section section--no-right-padding'>
+        <section ref={sectionTwo} className='section section--no-right-padding'>
           <AssetSwiper data={homepageProductImageCarousel} />
         </section>
         <section className='section'>
@@ -134,7 +218,7 @@ const Homepage = () => {
             })}
           </div>
         </section>
-        <section className='section'>
+        <section ref={sectionThree} className='section'>
           <h1 className='newsletter__title'>Join the newsletter here:</h1>
           <form
             data-netlify='true'
@@ -151,10 +235,16 @@ const Homepage = () => {
             </p>
           </form>
         </section>
-        <section className='section section--no-right-padding'>
+        <section
+          ref={sectionFour}
+          className='section section--no-right-padding'
+        >
           <TeamSwiper data={homepageTeamMembers} />
         </section>
-        <section className='section section--no-right-padding'>
+        <section
+          ref={sectionFive}
+          className='section section--no-right-padding'
+        >
           <div className='partners'>
             <p className='partners__title'>A big hug to our amazing partners</p>
             {homepagePartners.map((item, index) => {
@@ -162,7 +252,7 @@ const Homepage = () => {
             })}
           </div>
         </section>
-        <section className='section'>
+        <section ref={sectionSix} className='section'>
           <h1 className='jobs__headline'>
             Check out our <br />
             open positions

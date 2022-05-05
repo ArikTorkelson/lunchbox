@@ -28,6 +28,52 @@
   position: absolute;
   left: 0;
   top: 48px;
+  height: 100vh;
+
+  &__section {
+    position: fixed;
+    transform: rotate(-90deg);
+    transform-origin: left;
+    bottom: 24px;
+    
+
+    & div {
+      display: flex;
+      align-items: center;
+      animation: transition-in .7s forwards;
+      opacity: 0;
+      transform: translateY(-10px);
+
+      & p:first-child {
+        border: 1px solid $tertiary-color;
+        border-radius: 50%;
+        height: 24px;
+        width: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    hr {
+      margin: 0 24px;
+      width: 112px;
+      background-color: $tertiary-color;
+      border: none;
+      height: 1px;
+    }
+  }
+}
+
+@keyframes transition-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 .section {
