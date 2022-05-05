@@ -186,12 +186,12 @@ const Homepage = () => {
         </div>
         <header className='navbar'>
           <div className='navbar__left'>
-            <a href='#'>Our team</a>
-            <a href='#'>Partners</a>
-            <a href='#'>Careers</a>
+            <a href='#our-team'>Our team</a>
+            <a href='#partners'>Partners</a>
+            <a href='#careers'>Careers</a>
           </div>
           <div className='navbar__right'>
-            <a href='#'>Join the newsletter</a>
+            <a href='#newsletter'>Join the newsletter</a>
           </div>
         </header>
         <section ref={sectionOne} className='section hero'>
@@ -218,12 +218,13 @@ const Homepage = () => {
             })}
           </div>
         </section>
-        <section ref={sectionThree} className='section'>
+        <section id='newsletter' ref={sectionThree} className='section'>
           <h1 className='newsletter__title'>Join the newsletter here:</h1>
           <form
             data-netlify='true'
             className='newsletter__form'
             name='newsletter'
+            action=''
           >
             <input type='hidden' name='form-name' value='newsletter' />
             <p>
@@ -238,12 +239,14 @@ const Homepage = () => {
         <section
           ref={sectionFour}
           className='section section--no-right-padding'
+          id='our-team'
         >
           <TeamSwiper data={homepageTeamMembers} />
         </section>
         <section
           ref={sectionFive}
           className='section section--no-right-padding'
+          id='partners'
         >
           <div className='partners'>
             <p className='partners__title'>A big hug to our amazing partners</p>
@@ -252,7 +255,7 @@ const Homepage = () => {
             })}
           </div>
         </section>
-        <section ref={sectionSix} className='section'>
+        <section id='careers' ref={sectionSix} className='section'>
           <h1 className='jobs__headline'>
             Check out our <br />
             open positions
