@@ -302,8 +302,12 @@ const Homepage = () => {
               <p>Say something here.</p>
             </div>
             <div>
-              <img src={instagramLogo} />
-              <img src={discordLogo} />
+              <a>
+                <img src={instagramLogo} />
+              </a>
+              <a href='https://discord.gg/7Yt5RfP787'>
+                <img src={discordLogo} />
+              </a>
             </div>
           </div>
         </div>

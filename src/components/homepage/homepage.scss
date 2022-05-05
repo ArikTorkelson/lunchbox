@@ -79,6 +79,7 @@
 .section {
   padding: 80px 160px;
   position: relative;
+  z-index: 1;
 }
 
 .section--no-right-padding {
@@ -142,6 +143,7 @@
     }
 
     &::before {
+      background-color: $background-color;
       display: inline-block;
       width: 100%;
       height: 100%;
@@ -149,20 +151,21 @@
       position: absolute;
       left: 4px;
       top: 4px;
-      border-right: 1px solid $tertiary-color;
-      border-bottom: 1px solid $tertiary-color;
+      border: 1px solid $tertiary-color;
+      z-index: -1;
     }
   
     &::after {
+      background-color: $background-color;
       display: inline-block;
       width: 100%;
       height: 100%;
       content: "";
       position: absolute;
-      left: 8px;
-      top: 8px;
-      border-right: 1px solid $tertiary-color;
-      border-bottom: 1px solid $tertiary-color;
+      left: 9px;
+      top: 9px;
+      border: 1px solid $tertiary-color;
+      z-index: -2;
     }
 
     input, button {
@@ -208,6 +211,7 @@
   }
 
   &__card {
+    background-color: $background-color;
     border: 1px solid $tertiary-color;
     height: 128px;
     width: 100%;
@@ -219,27 +223,29 @@
     margin-bottom: 24px;
 
     &::before {
-      display: inline-block;
-      width: 100%;
-      height: 100%;
-      content: "";
-      position: absolute;
-      left: 8px;
-      top: 3px;
-      border: 1px solid $tertiary-color;
-      z-index: -1;
-    }
-  
-    &::after {
+      background-color: $background-color;
       display: inline-block;
       width: 100%;
       height: 100%;
       content: "";
       position: absolute;
       left: 4px;
-      top: -1px;
+      top: 4px;
       border: 1px solid $tertiary-color;
       z-index: -1;
+    }
+  
+    &::after {
+      background-color: $background-color;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      content: "";
+      position: absolute;
+      left: 9px;
+      top: 9px;
+      border: 1px solid $tertiary-color;
+      z-index: -2;
     }
 
     &-text-container {
