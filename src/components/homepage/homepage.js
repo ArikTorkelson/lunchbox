@@ -86,32 +86,33 @@ const Homepage = () => {
   const sectionFour = useRef(null);
   const sectionFive = useRef(null);
   const sectionSix = useRef(null);
+  const sectionSeven = useRef(null);
   const scrollOffset = 0;
   const handleScroll = () => {
-    const windowOffset = scrollOffset + window.pageYOffset;
+    const windowOffset =
+      scrollOffset + window.pageYOffset + window.innerHeight / 2;
 
     switch (true) {
-      case windowOffset < sectionOne.current.offsetTop:
+      case windowOffset < sectionOne.current.offsetTop + window.innerHeight / 2:
         setActiveSidebar(0);
         break;
-      case windowOffset > sectionOne.current.offsetTop &&
-        windowOffset < sectionTwo.current.offsetTop:
+      case windowOffset < sectionTwo.current.offsetTop:
         setActiveSidebar(1);
         break;
-      case windowOffset > sectionTwo.current.offsetTop &&
-        windowOffset < sectionThree.current.offsetTop:
+      case windowOffset < sectionThree.current.offsetTop:
         setActiveSidebar(2);
         break;
-      case windowOffset > sectionThree.current.offsetTop &&
-        windowOffset < sectionFour.current.offsetTop:
+      case windowOffset < sectionFour.current.offsetTop:
         setActiveSidebar(3);
         break;
-      case windowOffset > sectionFour.current.offsetTop &&
-        windowOffset < sectionFive.current.offsetTop:
+      case windowOffset < sectionFive.current.offsetTop:
         setActiveSidebar(4);
         break;
-      case windowOffset < sectionSix.current.offsetTop:
+      case windowOffset - 50 < sectionSix.current.offsetTop:
         setActiveSidebar(5);
+        break;
+      case windowOffset < sectionSeven.current.offsetTop:
+        setActiveSidebar(6);
         break;
     }
   };
@@ -290,7 +291,7 @@ const Homepage = () => {
           })}
         </section>
       </div>
-      <footer className='footer'>
+      <footer ref={sectionSeven} className='footer'>
         <div className='footer__content'>
           <div>
             <img src={lunchboxFooterLogo} />

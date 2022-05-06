@@ -29,13 +29,17 @@
   left: 0;
   top: 48px;
   height: 100vh;
+  
+  @include breakpoint {
+    display: none;
+  }
 
   &__section {
     position: fixed;
     transform: rotate(-90deg);
     transform-origin: left;
     bottom: 24px;
-    
+    margin-left: 16px;
 
     & div {
       display: flex;
@@ -80,10 +84,18 @@
   padding: 80px 160px;
   position: relative;
   z-index: 1;
+
+  @include breakpoint {
+    padding: 60px 40px;
+  }
 }
 
 .section--no-right-padding {
   padding-right: 0px;
+
+  @include breakpoint {
+    padding-right: 40px;
+  }
 }
 
 .hero {
@@ -97,6 +109,9 @@
 
 .featurettes {
   display: flex;
+  @include breakpoint {
+    flex-direction: column;
+  }
 
   &__item {
     margin-right: 48px;
@@ -136,6 +151,10 @@
     padding: 0 48px;
     height: 108px;
     width: 780px;
+
+    @include breakpoint {
+      width: auto;
+    }
 
     p {
       z-index: 1;
@@ -194,6 +213,10 @@
   align-items: center;
   padding: 0 64px;
 
+  @include breakpoint {
+    overflow-x: scroll;
+  }
+
   &__title {
     font-size: 32px;
     width: 320px;
@@ -221,6 +244,10 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
+
+    @include breakpoint {
+      width: auto;
+    }
 
     &::before {
       background-color: $background-color;
