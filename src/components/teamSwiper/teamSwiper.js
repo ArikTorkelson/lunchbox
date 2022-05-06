@@ -21,9 +21,9 @@ const TeamSwiper = ({ data }) => {
         >
           <img src={leftArrow} />
         </div>
-        <hr />
-        <p>Drag to view</p>
-        <hr />
+        <hr className='custom-swiper-navigation--hide-mobile' />
+        <p className='custom-swiper-navigation--hide-mobile'>Drag to view</p>
+        <hr className='custom-swiper-navigation--hide-mobile' />
         <div
           className='custom-swiper-navigation__control'
           onClick={() => swipeInstance?.slideNext()}

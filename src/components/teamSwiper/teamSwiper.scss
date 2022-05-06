@@ -18,6 +18,14 @@
     width: 64px;
   }
 
+  @include breakpoint {
+    justify-content: end;
+    
+    &--hide-mobile {
+      display: none;
+    }
+  }
+
   &__control {
     border: 1px solid $tertiary-color;
     border-radius: 50%;

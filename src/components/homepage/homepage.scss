@@ -116,6 +116,10 @@
   &__item {
     margin-right: 48px;
 
+    @include breakpoint {
+      margin-top: 48px;
+    }
+
     &:last-child {
       margin-right: 0;
     }
@@ -153,6 +157,7 @@
     width: 780px;
 
     @include breakpoint {
+      padding: 0 12px;
       width: auto;
     }
 
@@ -208,18 +213,42 @@
 .partners {
   background: white;
   display: flex;
-  height: 228px;
+  min-height: 228px;
   justify-content: space-between;
   align-items: center;
   padding: 0 64px;
 
   @include breakpoint {
-    overflow-x: scroll;
+    padding: 0 12px;
+    flex-direction: column;
   }
 
   &__title {
     font-size: 32px;
     width: 320px;
+
+    @include breakpoint {
+      margin: 48px 0;
+      width: 100%;
+    }
+  }
+
+  &__partner-logos {
+    @include breakpoint {
+      display: flex;
+      width: 100%;
+      position: relative;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__logo-container {
+    @include breakpoint {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+    }
   }
 
   img {
@@ -246,7 +275,11 @@
     margin-bottom: 24px;
 
     @include breakpoint {
+      height: auto;
+      flex-direction: column;
       width: auto;
+      align-items: normal;
+      padding: 30px;
     }
 
     &::before {
@@ -278,6 +311,10 @@
     &-text-container {
       display: flex;
       flex-direction: column;
+
+      @include breakpoint {
+        margin-top: 24px;
+      }
     }
 
     &-title {
@@ -288,6 +325,17 @@
     &-body {
       font-size: 24px;
       margin-top: 20px;
+      @include breakpoint {
+        margin-top: 12px;
+      }
+    }
+
+    &-apply-container {
+      @include breakpoint {
+        width: 100%;
+        text-align: center;
+        margin-top: 24px;
+      }
     }
 
     &-apply {

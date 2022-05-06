@@ -251,9 +251,29 @@ const Homepage = () => {
         >
           <div className='partners'>
             <p className='partners__title'>A big hug to our amazing partners</p>
-            {homepagePartners.map((item, index) => {
-              return <img key={index} src={item.img.file.url} />;
-            })}
+            <div className='partners__partner-logos'>
+              {homepagePartners.map((item, index) => {
+                return (
+                  <div className='partners__logo-container'>
+                    <img key={index} src={item.img.file.url} />
+                  </div>
+                );
+              })}
+              {homepagePartners.map((item, index) => {
+                return (
+                  <div className='partners__logo-container'>
+                    <img key={index} src={item.img.file.url} />
+                  </div>
+                );
+              })}
+              {homepagePartners.map((item, index) => {
+                return (
+                  <div className='partners__logo-container'>
+                    <img key={index} src={item.img.file.url} />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
         <section id='careers' ref={sectionSix} className='section'>
@@ -278,7 +298,7 @@ const Homepage = () => {
                     {item.categories.commitment}
                   </p>
                 </div>
-                <div>
+                <div className='jobs__card-apply-container'>
                   <div
                     onClick={() => window.open(item.applyUrl, '_blank')}
                     className='jobs__card-apply'
