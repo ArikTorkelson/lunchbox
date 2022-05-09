@@ -80,6 +80,8 @@ const Homepage = () => {
   const homepagePartners = homepageData.allContentfulPartner.nodes;
   const [jobListings, setJobListings] = useState([]);
   const [activeSidebar, setActiveSidebar] = useState(0);
+  const [showNewsletterLink, setShowNewsletterLink] = useState(false);
+  const [lastScrollPos, setLastScrollPos] = useState(0);
   const sectionOne = useRef(null);
   const sectionTwo = useRef(null);
   const sectionThree = useRef(null);
@@ -88,6 +90,26 @@ const Homepage = () => {
   const sectionSix = useRef(null);
   const sectionSeven = useRef(null);
   const scrollOffset = 0;
+
+  useEffect(() => {
+    fetch('https://api.lever.co/v0/postings/LunchboxEntertainment?mode=json')
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw response;
+      })
+      .then((data) => {
+        setJobListings(data);
+      });
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollPos]);
+
   const handleScroll = () => {
     const windowOffset =
       scrollOffset + window.pageYOffset + window.innerHeight / 2;
@@ -115,25 +137,14 @@ const Homepage = () => {
         setActiveSidebar(6);
         break;
     }
+
+    if (window.pageYOffset > 500 && window.pageYOffset > lastScrollPos) {
+      setShowNewsletterLink(true);
+    } else {
+      setShowNewsletterLink(false);
+    }
+    setLastScrollPos(window.pageYOffset);
   };
-  useEffect(() => {
-    fetch('https://api.lever.co/v0/postings/LunchboxEntertainment?mode=json')
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw response;
-      })
-      .then((data) => {
-        setJobListings(data);
-      });
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
     <div className='homepage' onScroll={handleScroll}>
@@ -191,9 +202,13 @@ const Homepage = () => {
             <a href='#partners'>Partners</a>
             <a href='#careers'>Careers</a>
           </div>
-          <div className='navbar__right'>
-            <a href='#newsletter'>Join the newsletter</a>
-          </div>
+        </header>
+        <header
+          className={`navbar__right ${
+            showNewsletterLink && 'navbar__right--show'
+          }`}
+        >
+          <a href='#newsletter'>Join the newsletter</a>
         </header>
         <section ref={sectionOne} className='section hero'>
           <h1>
