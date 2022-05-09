@@ -146,6 +146,18 @@ const Homepage = () => {
     setLastScrollPos(window.pageYOffset);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let formData = new FormData(e.target);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => console.log('Form successfully submitted'))
+      .catch((error) => alert(error));
+  };
+
   return (
     <div className='homepage' onScroll={handleScroll}>
       <div className='content'>
@@ -240,7 +252,7 @@ const Homepage = () => {
             data-netlify='true'
             className='newsletter__form'
             name='newsletter'
-            action=''
+            onSubmit={handleSubmit}
           >
             <input type='hidden' name='form-name' value='newsletter' />
             <p>
