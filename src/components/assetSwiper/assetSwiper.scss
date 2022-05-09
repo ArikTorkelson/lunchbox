@@ -24,6 +24,10 @@
     height: 24px;
     width: 24px;
   }
+
+  @include breakpoint {
+    width: auto;
+  }
 }
 
 .swiper-slide-container {
@@ -53,5 +57,10 @@
     top: 9px;
     border: 1px solid $tertiary-color;
     z-index: -2;
+  }
+}
+.swiper.asset-gallery-initialized {
+  @include breakpoint {
+    height: 250px;
   }
 }

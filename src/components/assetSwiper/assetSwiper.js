@@ -39,6 +39,7 @@ const AssetSwiper = ({ data }) => {
         slidesPerView={'auto'}
         spaceBetween={30}
         onBeforeInit={(swipper) => setSwipeInstance(swipper)}
+        containerModifierClass={'asset-gallery-'}
       >
         {data.map((item, index) => {
           return (

@@ -36,6 +36,10 @@
     height: 24px;
     width: 24px;
   }
+
+  @include breakpoint {
+    width: auto;
+  }
 }
 
 .teammember {

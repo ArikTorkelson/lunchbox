@@ -99,12 +99,16 @@
 }
 
 .hero {
-  font-size: 64px;
+  font-size: clamp(18px, 5vw, 64px);
   font-weight: 400;
   height: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include breakpoint {
+    height: 250px;
+  }
 }
 
 .featurettes {
@@ -164,6 +168,15 @@
     p {
       z-index: 1;
       display: flex;
+
+      @include breakpoint {
+        width: 50%;
+      }
+      &:last-child {
+        @include breakpoint {
+          justify-content: flex-end;
+        }
+      }
     }
 
     &::before {
@@ -389,8 +402,18 @@
       margin-right: 100px;
     }
 
+    @include breakpoint {
+      p {
+        margin-right: 4px;
+      }
+    }
+
     img {
       margin-left: 24px;
     }
+  }
+
+  @include breakpoint {
+    padding: 40px 12px 28px;
   }
 }
