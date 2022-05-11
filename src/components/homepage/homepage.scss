@@ -12,6 +12,10 @@
   position: relative;
   width: 89%;
   height: 100%;
+
+  @include breakpoint {
+    width: 100%;
+  }
 }
 
 .navbar {
@@ -60,6 +64,8 @@
 .sidebar {
   height: 100%;
   width: 11%;
+  margin-left: 50px;
+  margin-top: 48px;
   
   @include breakpoint {
     display: none;
@@ -70,7 +76,7 @@
     transform: rotate(-90deg);
     transform-origin: left;
     bottom: 48px;
-    margin-left: 32px;
+    margin-left: 26px;
 
     & p {
       animation: transition-in .7s forwards;
@@ -130,7 +136,7 @@
   padding-right: 0px;
 
   @include breakpoint {
-    padding-right: 40px;
+    padding-left: 0px;
   }
 }
 
