@@ -58,10 +58,6 @@
 }
 
 .sidebar {
-  // position: absolute;
-  // left: 0;
-  // top: 48px;
-  // height: calc(100vh - 48px);
   height: 100%;
   width: 11%;
   
@@ -74,7 +70,7 @@
     transform: rotate(-90deg);
     transform-origin: left;
     bottom: 48px;
-    margin-left: 16px;
+    margin-left: 32px;
 
     & p {
       animation: transition-in .7s forwards;
