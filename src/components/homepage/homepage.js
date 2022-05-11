@@ -160,7 +160,7 @@ const Homepage = () => {
 
   return (
     <div className='homepage' onScroll={handleScroll}>
-      <div className='content'>
+      <div className='homepage-container'>
         <div className='sidebar'>
           <img src={lunchboxLogo} />
           <div className='sidebar__section'>
@@ -208,136 +208,149 @@ const Homepage = () => {
             )}
           </div>
         </div>
-        <header className='navbar'>
-          <div className='navbar__left'>
-            <a href='#our-team'>Our team</a>
-            <a href='#partners'>Partners</a>
-            <a href='#careers'>Careers</a>
-          </div>
-        </header>
-        <header
-          className={`navbar__right ${
-            showNewsletterLink && 'navbar__right--show'
-          }`}
-        >
-          <a href='#newsletter'>Join the newsletter</a>
-        </header>
-        <section ref={sectionOne} className='section hero'>
-          <h1>
-            We are shaping the future of competitive gaming with a revolutionary
-            *new* MOBA.
-          </h1>
-        </section>
-        <section ref={sectionTwo} className='section section--no-right-padding'>
-          <AssetSwiper data={homepageProductImageCarousel} />
-        </section>
-        <section className='section'>
-          <div className='featurettes'>
-            {homepageFeaturettes.map((item, index) => {
-              return (
-                <div className='featurettes__item' key={index}>
-                  <img className='featurettes__icon' src={item.icon.file.url} />
-                  <h3 className='featurettes__title'>{item.title}</h3>
-                  <p className='featurettes__subtitle'>
-                    {item.subtitle.subtitle}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-        <section id='newsletter' ref={sectionThree} className='section'>
-          <h1 className='newsletter__title'>Join the newsletter here:</h1>
-          <form
-            data-netlify='true'
-            className='newsletter__form'
-            name='newsletter'
-            onSubmit={handleSubmit}
+        <div className='content'>
+          <header className='navbar'>
+            <div className='navbar__left'>
+              <a href='#our-team'>Our team</a>
+              <a href='#partners'>Partners</a>
+              <a href='#careers'>Careers</a>
+            </div>
+          </header>
+          <header
+            className={`navbar__right ${
+              showNewsletterLink && 'navbar__right--show'
+            }`}
           >
-            <input type='hidden' name='form-name' value='newsletter' />
-            <p>
-              <input type='email' name='email' placeholder='E-mail' />
-            </p>
-            <p>
-              {' '}
-              <button type='submit'>Submit</button>
-            </p>
-          </form>
-        </section>
-        <section
-          ref={sectionFour}
-          className='section section--no-right-padding'
-          id='our-team'
-        >
-          <TeamSwiper data={homepageTeamMembers} />
-        </section>
-        <section
-          ref={sectionFive}
-          className='section section--no-right-padding'
-          id='partners'
-        >
-          <div className='partners'>
-            <p className='partners__title'>A big hug to our amazing partners</p>
-            <div className='partners__partner-logos'>
-              {homepagePartners.map((item, index) => {
+            <a href='#newsletter'>Join the newsletter</a>
+          </header>
+          <section ref={sectionOne} className='section hero'>
+            <h1>
+              We are shaping the future of competitive gaming with a
+              revolutionary *new* MOBA.
+            </h1>
+          </section>
+          <section
+            ref={sectionTwo}
+            className='section section--no-right-padding'
+          >
+            <AssetSwiper data={homepageProductImageCarousel} />
+          </section>
+          <section className='section'>
+            <div className='featurettes'>
+              {homepageFeaturettes.map((item, index) => {
                 return (
-                  <div className='partners__logo-container'>
-                    <img key={index} src={item.img.file.url} />
-                  </div>
-                );
-              })}
-              {homepagePartners.map((item, index) => {
-                return (
-                  <div className='partners__logo-container'>
-                    <img key={index} src={item.img.file.url} />
-                  </div>
-                );
-              })}
-              {homepagePartners.map((item, index) => {
-                return (
-                  <div className='partners__logo-container'>
-                    <img key={index} src={item.img.file.url} />
+                  <div className='featurettes__item' key={index}>
+                    <img
+                      className='featurettes__icon'
+                      src={item.icon.file.url}
+                    />
+                    <h3 className='featurettes__title'>{item.title}</h3>
+                    <p className='featurettes__subtitle'>
+                      {item.subtitle.subtitle}
+                    </p>
                   </div>
                 );
               })}
             </div>
-          </div>
-        </section>
-        <section id='careers' ref={sectionSix} className='section'>
-          <h1 className='jobs__headline'>
-            Check out our <br />
-            open positions
-          </h1>
-          {jobListings.map((item, index) => {
-            return (
-              <div key={index} className='jobs__card'>
-                <div className='jobs__card-text-container'>
-                  <p className='jobs__card-title'>Title</p>
-                  <p className='jobs__card-body'>{item.text}</p>
-                </div>
-                <div className='jobs__card-text-container'>
-                  <p className='jobs__card-title'>Location</p>
-                  <p className='jobs__card-body'>{item.categories.location}</p>
-                </div>
-                <div className='jobs__card-text-container'>
-                  <p className='jobs__card-title'>Type</p>
-                  <p className='jobs__card-body'>
-                    {item.categories.commitment}
-                  </p>
-                </div>
-                <div className='jobs__card-apply-container'>
-                  <div
-                    onClick={() => window.open(item.applyUrl, '_blank')}
-                    className='jobs__card-apply'
-                  >
-                    Apply
+          </section>
+          <section id='newsletter' ref={sectionThree} className='section'>
+            <h1 className='newsletter__title'>Join the newsletter here:</h1>
+            <form
+              data-netlify='true'
+              className='newsletter__form'
+              name='newsletter'
+              onSubmit={handleSubmit}
+            >
+              <input type='hidden' name='form-name' value='newsletter' />
+              <p>
+                <input type='email' name='email' placeholder='E-mail' />
+              </p>
+              <p>
+                {' '}
+                <button type='submit'>Submit</button>
+              </p>
+            </form>
+          </section>
+          <section
+            ref={sectionFour}
+            className='section section--no-right-padding'
+            id='our-team'
+          >
+            <TeamSwiper data={homepageTeamMembers} />
+          </section>
+          <section
+            ref={sectionFive}
+            className='section section--no-right-padding'
+            id='partners'
+          >
+            <div className='partners'>
+              <p className='partners__title'>
+                A big hug to our amazing partners
+              </p>
+              <div className='partners__partner-logos'>
+                {homepagePartners.map((item, index) => {
+                  return (
+                    <div className='partners__logo-container'>
+                      <img key={index} src={item.img.file.url} />
+                    </div>
+                  );
+                })}
+                {homepagePartners.map((item, index) => {
+                  return (
+                    <div className='partners__logo-container'>
+                      <img key={index} src={item.img.file.url} />
+                    </div>
+                  );
+                })}
+                {homepagePartners.map((item, index) => {
+                  return (
+                    <div className='partners__logo-container'>
+                      <img key={index} src={item.img.file.url} />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+          <section id='careers' ref={sectionSix} className='section'>
+            <h1 className='jobs__headline'>
+              Check out our <br />
+              open positions
+            </h1>
+            {jobListings.map((item, index) => {
+              return (
+                <div key={index} className='jobs__card'>
+                  <div className='jobs__card-text-container'>
+                    <p className='jobs__card-title'>Title</p>
+                    <p className='jobs__card-body'>{item.text}</p>
+                  </div>
+                  <div className='jobs__card-text-container'>
+                    <p className='jobs__card-title'>Location</p>
+                    <p className='jobs__card-body'>
+                      {item.categories.location}
+                    </p>
+                  </div>
+                  <div className='jobs__card-text-container'>
+                    <p className='jobs__card-title'>Type</p>
+                    <p className='jobs__card-body'>
+                      {item.categories.commitment}
+                    </p>
+                  </div>
+                  <div className='jobs__card-apply-container'>
+                    <div
+                      onClick={() => window.open(item.applyUrl, '_blank')}
+                      className='jobs__card-apply'
+                    >
+                      Apply
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </section>
+              );
+            })}
+          </section>
+        </div>
       </div>
+
       <footer ref={sectionSeven} className='footer'>
         <div className='footer__content'>
           <div>
