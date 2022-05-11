@@ -319,6 +319,7 @@
   }
 
   &__logo-container {
+    margin: 0 35px;
     @include breakpoint {
       display: flex;
       align-items: center;
