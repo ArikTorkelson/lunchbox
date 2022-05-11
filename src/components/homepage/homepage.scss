@@ -203,6 +203,10 @@
     width: 780px;
     max-width: 100%;
 
+    &--submitted {
+      color: $secondary-color;
+    }
+
     @include breakpoint {
       padding: 0 12px;
       width: auto;

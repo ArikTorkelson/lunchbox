@@ -78,6 +78,7 @@ const Homepage = () => {
   const homepageFeaturettes = homepageData.allContentfulFeaturettes.nodes;
   const homepageTeamMembers = homepageData.allContentfulTeamMember.nodes;
   const homepagePartners = homepageData.allContentfulPartner.nodes;
+  const [submitButton, setSubmitButton] = useState('Submit');
   const [jobListings, setJobListings] = useState([]);
   const [activeSidebar, setActiveSidebar] = useState(0);
   const [showNewsletterLink, setShowNewsletterLink] = useState(false);
@@ -148,13 +149,19 @@ const Homepage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     let formData = new FormData(e.target);
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => console.log('Form successfully submitted'))
+      .then(() => {
+        setSubmitButton('Submitted!');
+        setTimeout(() => {
+          setSubmitButton('Submit');
+        }, 1400);
+      })
       .catch((error) => alert(error));
   };
 
@@ -267,7 +274,17 @@ const Homepage = () => {
               </p>
               <p>
                 {' '}
-                <button type='submit'>Submit</button>
+                <button
+                  disabled={submitButton !== 'Submit'}
+                  className={
+                    submitButton === 'Submit'
+                      ? ''
+                      : 'newsletter__form--submitted'
+                  }
+                  type='submit'
+                >
+                  {submitButton}
+                </button>
               </p>
             </form>
           </section>
