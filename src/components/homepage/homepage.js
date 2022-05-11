@@ -82,7 +82,7 @@ const Homepage = () => {
   const [jobListings, setJobListings] = useState([]);
   const [activeSidebar, setActiveSidebar] = useState(0);
   const [showNewsletterLink, setShowNewsletterLink] = useState(false);
-  const [lastScrollPos, setLastScrollPos] = useState(0);
+  const [lastScrollPos, setLastScrollPos] = useState(500);
   const sectionOne = useRef(null);
   const sectionTwo = useRef(null);
   const sectionThree = useRef(null);
@@ -144,7 +144,13 @@ const Homepage = () => {
     } else {
       setShowNewsletterLink(false);
     }
-    setLastScrollPos(window.pageYOffset);
+
+    if (
+      window.pageYOffset - 50 > lastScrollPos ||
+      window.pageYOffset + 50 < lastScrollPos
+    ) {
+      setLastScrollPos(window.pageYOffset);
+    }
   };
 
   const handleSubmit = (e) => {
@@ -305,20 +311,6 @@ const Homepage = () => {
                 A big hug to our amazing partners
               </p>
               <div className='partners__partner-logos'>
-                {homepagePartners.map((item, index) => {
-                  return (
-                    <div className='partners__logo-container'>
-                      <img key={index} src={item.img.file.url} />
-                    </div>
-                  );
-                })}
-                {homepagePartners.map((item, index) => {
-                  return (
-                    <div className='partners__logo-container'>
-                      <img key={index} src={item.img.file.url} />
-                    </div>
-                  );
-                })}
                 {homepagePartners.map((item, index) => {
                   return (
                     <div className='partners__logo-container'>
