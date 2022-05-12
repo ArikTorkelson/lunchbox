@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { FreeMode } from 'swiper';
-import leftArrow from '../../images/leftArrow.svg';
-import rightArrow from '../../images/rightArrow.svg';
+import { LeftArrow } from '../../images/leftArrow.js';
+import { RightArrow } from '../../images/rightArrow.js';
 
 import './assetSwiper.scss';
 
@@ -18,7 +18,7 @@ const AssetSwiper = ({ data }) => {
           className='custom-swiper-navigation__control'
           onClick={() => swipeInstance?.slidePrev()}
         >
-          <img src={leftArrow} />
+          <LeftArrow />
         </div>
         <hr />
         <p>Drag to view</p>
@@ -27,7 +27,7 @@ const AssetSwiper = ({ data }) => {
           className='custom-swiper-navigation__control'
           onClick={() => swipeInstance?.slideNext()}
         >
-          <img src={rightArrow} />
+          <RightArrow />
         </div>
       </div>
 

@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { FreeMode } from 'swiper';
-import leftArrow from '../../images/leftArrow.svg';
-import rightArrow from '../../images/rightArrow.svg';
+import { LeftArrow } from '../../images/leftArrow.js';
+import { RightArrow } from '../../images/rightArrow.js';
 
 import './teamSwiper.scss';
 
@@ -19,7 +19,7 @@ const TeamSwiper = ({ data }) => {
           className='custom-swiper-navigation__control'
           onClick={() => swipeInstance?.slidePrev()}
         >
-          <img src={leftArrow} />
+          <LeftArrow />
         </div>
         <hr className='custom-swiper-navigation--hide-mobile' />
         <p className='custom-swiper-navigation--hide-mobile'>Drag to view</p>
@@ -28,7 +28,7 @@ const TeamSwiper = ({ data }) => {
           className='custom-swiper-navigation__control'
           onClick={() => swipeInstance?.slideNext()}
         >
-          <img src={rightArrow} />
+          <RightArrow />
         </div>
       </div>
 

@@ -9,7 +9,7 @@
   align-items: center;
   margin: 0 auto;
   padding-bottom: 48px;
-  width: 348px;
+  width: 330px;
 
   hr {
     background-color: $tertiary-color;
@@ -35,10 +35,15 @@
     align-items: center;
     height: 24px;
     width: 24px;
-  }
 
-  @include breakpoint {
-    width: auto;
+    &:hover {
+      background-color: $text-color;
+      color: white;
+
+      & svg path {
+        fill: white;
+      }
+    }
   }
 }
 
