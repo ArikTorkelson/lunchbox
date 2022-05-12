@@ -32,6 +32,12 @@
     }
   }
 
+  &__left:last-child {
+    @include breakpoint {
+      display: none;
+    }
+  }
+
   &__right {
     display: none;
     position: sticky;
