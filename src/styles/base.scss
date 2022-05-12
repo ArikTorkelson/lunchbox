@@ -18,6 +18,10 @@ $max-width: 1200px;
   @media (max-width: 980px) { @content ; }
 }
 
+@mixin breakpointTeamSwiper {
+  @media (max-width: 1200px) { @content ; }
+}
+
 
 // Swiper overrides
 
