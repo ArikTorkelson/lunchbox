@@ -4,6 +4,11 @@ p {
   font-size: 14px;
 }
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 // colors
 $text-color: #080D36;
 $background-color: #F3F6F8;
