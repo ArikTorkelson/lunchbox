@@ -12,6 +12,7 @@ import instagramLogo from '../../images/insta.svg';
 import discordLogo from '../../images/discord.svg';
 import lunchboxLogo from '../../images/lunchbox-logo.svg';
 import lunchboxFooterLogo from '../../images/lunchbox-logo-footer.svg';
+import heroVideo from '../../images/hero-vid.mp4';
 
 const Homepage = () => {
   const dataProductImageCarousel = useStaticQuery(graphql`
@@ -232,6 +233,12 @@ const Homepage = () => {
             <a href='#newsletter'>Join the newsletter</a>
           </header>
           <section ref={sectionOne} className='section hero'>
+            <div className='hero__video'>
+              <video autoPlay muted>
+                <source src={heroVideo} type='video/webm' />
+                Your browser does not support the video tag.
+              </video>
+            </div>
             <h1>We are shaping the future</h1>
             <h1>of competitive gaming</h1>
             <h1>with a revolutionary</h1>

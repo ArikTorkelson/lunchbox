@@ -157,6 +157,17 @@
   flex-direction: column;
   justify-content: center;
   letter-spacing: -0.2;
+  position: relative;
+
+  &__video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    video {
+      width: 100%;
+    }
+  }
 
   h1 {
     opacity: 0;
