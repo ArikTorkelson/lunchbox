@@ -38,7 +38,7 @@ const TeamSwiper = ({ data }) => {
         freeMode={true}
         modules={[FreeMode]}
         slidesPerView={'auto'}
-        spaceBetween={30}
+        spaceBetween={96}
         onBeforeInit={(swipper) => setSwipeInstance(swipper)}
       >
         {data.map((item, index) => {
