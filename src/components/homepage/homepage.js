@@ -232,10 +232,10 @@ const Homepage = () => {
             <a href='#newsletter'>Join the newsletter</a>
           </header>
           <section ref={sectionOne} className='section hero'>
-            <h1>
-              We are shaping the future of competitive gaming with a
-              revolutionary *new* MOBA.
-            </h1>
+            <h1>We are shaping the future</h1>
+            <h1>of competitive gaming</h1>
+            <h1>with a revolutionary</h1>
+            <h1>*new* MOBA.</h1>
           </section>
           <section
             ref={sectionTwo}
