@@ -70,9 +70,10 @@
       content: "";
       position: absolute;
       left: 4px;
-      top: 4px;
+      top: 2px;
       border: 1px solid $tertiary-color;
       z-index: -1;
+      transition: 0.2s;
     }
   
     &::after {
@@ -83,9 +84,22 @@
       content: "";
       position: absolute;
       left: 9px;
-      top: 9px;
+      top: 7px;
       border: 1px solid $tertiary-color;
       z-index: -2;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      &::before {
+        left: 2px;
+        top: 0px;
+      }
+    
+      &::after {
+        left: 5px;
+        top: 3px;
+      }
     }
   }
 
