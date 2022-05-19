@@ -82,7 +82,6 @@ const Homepage = () => {
   const [jobListings, setJobListings] = useState([]);
   const [activeSidebar, setActiveSidebar] = useState(0);
   const [showNewsletterLink, setShowNewsletterLink] = useState(false);
-  const [lastScrollPos, setLastScrollPos] = useState(500);
   const sectionOne = useRef(null);
   const sectionTwo = useRef(null);
   const sectionThree = useRef(null);
@@ -109,7 +108,7 @@ const Homepage = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [lastScrollPos]);
+  }, []);
 
   const handleScroll = () => {
     const windowOffset =
@@ -139,17 +138,10 @@ const Homepage = () => {
         break;
     }
 
-    if (window.pageYOffset > 500 && window.pageYOffset > lastScrollPos) {
+    if (window.pageYOffset > 500) {
       setShowNewsletterLink(true);
     } else {
       setShowNewsletterLink(false);
-    }
-
-    if (
-      window.pageYOffset - 50 > lastScrollPos ||
-      window.pageYOffset + 50 < lastScrollPos
-    ) {
-      setLastScrollPos(window.pageYOffset);
     }
   };
 
