@@ -168,48 +168,62 @@ const Homepage = () => {
     <div className='homepage' onScroll={handleScroll}>
       <div className='homepage-container'>
         <div className='sidebar'>
-          <img src={lunchboxLogo} />
+          <div className='sidebar__logo-container'>
+            <img src={lunchboxLogo} />
+          </div>
           <div className='sidebar__section'>
             {activeSidebar === 0 && (
               <div>
                 <p>01</p>
-                <hr />
-                <p>Our mission</p>
+                <div className='sidebar__name'>
+                  <hr />
+                  <p>Our mission</p>
+                </div>
               </div>
             )}
             {activeSidebar === 1 && (
               <div>
                 <p>02</p>
-                <hr />
-                <p>Screenshots</p>
+                <div className='sidebar__name'>
+                  <hr />
+                  <p>Screenshots</p>
+                </div>
               </div>
             )}
             {activeSidebar === 2 && (
               <div>
                 <p>03</p>
-                <hr />
-                <p>Newsletter</p>
+                <div className='sidebar__name'>
+                  <hr />
+                  <p>Newsletter</p>
+                </div>
               </div>
             )}
             {activeSidebar === 3 && (
               <div>
                 <p>04</p>
-                <hr />
-                <p>Our Team</p>
+                <div className='sidebar__name'>
+                  <hr />
+                  <p>Our Team</p>
+                </div>
               </div>
             )}
             {activeSidebar === 4 && (
               <div>
                 <p>05</p>
-                <hr />
-                <p>Partners</p>
+                <div className='sidebar__name'>
+                  <hr />
+                  <p>Partners</p>
+                </div>
               </div>
             )}
             {activeSidebar === 5 && (
               <div>
                 <p>06</p>
-                <hr />
-                <p>Careers</p>
+                <div className='sidebar__name'>
+                  <hr />
+                  <p>Careers</p>
+                </div>
               </div>
             )}
           </div>
