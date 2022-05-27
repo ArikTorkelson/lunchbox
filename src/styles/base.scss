@@ -1,7 +1,37 @@
 @import 'reset.scss';
 
+// breakpoint
+
+@mixin breakpoint {
+  @media (max-width: 980px) { @content ; }
+}
+
+@mixin wideBreakpoint {
+  @media (min-width: 1400px) { @content ;}
+}
+
+@mixin breakpointTeamSwiper {
+  @media (max-width: 1200px) { @content ; }
+}
+
 p {
   font-size: 14px;
+
+  @include wideBreakpoint {
+    font-size: 16px;
+  }
+}
+
+h2 {
+  @include wideBreakpoint {
+    font-size: 36px !important;
+  }
+}
+
+h3 {
+  @include wideBreakpoint {
+    font-size: 28px !important;
+  }
 }
 
 * {
@@ -16,16 +46,6 @@ $secondary-color: #98A9AF;
 $tertiary-color: #CCD7DB;
 // spacing
 $max-width: 1200px;
-
-// breakpoint
-
-@mixin breakpoint {
-  @media (max-width: 980px) { @content ; }
-}
-
-@mixin breakpointTeamSwiper {
-  @media (max-width: 1200px) { @content ; }
-}
 
 
 // Swiper overrides

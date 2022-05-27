@@ -30,9 +30,14 @@
     &:not(:first-child) {
       margin-left: 64px;
     }
+
+    &:hover {
+      border-bottom: 1px solid $text-color;
+    }
   }
 
   &__left:last-child {
+    padding-right: 24px;
     @include breakpoint {
       display: none;
     }
@@ -251,6 +256,9 @@
 
 .featurettes {
   display: flex;
+  @include wideBreakpoint {
+    gap: 15%;
+  }
   @include breakpoint {
     flex-direction: column;
   }
@@ -522,6 +530,15 @@
     &-text-container {
       display: flex;
       flex-direction: column;
+      width: 25%;
+  
+      &:first-child {
+        width: 35%;
+      }
+  
+      &:last-child {
+        width: 15%;
+      }
 
       @include breakpoint {
         margin-top: 24px;

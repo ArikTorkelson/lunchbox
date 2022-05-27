@@ -37,7 +37,7 @@ const AssetSwiper = ({ data }) => {
         freeMode={true}
         modules={[FreeMode]}
         slidesPerView={'auto'}
-        spaceBetween={96}
+        spaceBetween={32}
         onBeforeInit={(swipper) => setSwipeInstance(swipper)}
         containerModifierClass={'asset-gallery-'}
       >

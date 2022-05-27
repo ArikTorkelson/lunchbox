@@ -38,7 +38,7 @@ const TeamSwiper = ({ data }) => {
         freeMode={true}
         modules={[FreeMode]}
         slidesPerView={'auto'}
-        spaceBetween={96}
+        spaceBetween={32}
         onBeforeInit={(swipper) => setSwipeInstance(swipper)}
       >
         {data.map((item, index) => {
@@ -49,7 +49,7 @@ const TeamSwiper = ({ data }) => {
                   <img src={item.photo.file.url} />
                 </div>
                 <p className='teammember__title'>{item.title}</p>
-                <p className='teammember__name'>{item.name}</p>
+                <h2 className='teammember__name'>{item.name}</h2>
                 <p className='teammember__bio'>{item.bio.bio}</p>
               </div>
             </SwiperSlide>

@@ -285,7 +285,7 @@ const Homepage = () => {
             </div>
           </section>
           <section id='newsletter' ref={sectionThree} className='section'>
-            <h1 className='newsletter__title'>Join the newsletter here:</h1>
+            <h2 className='newsletter__title'>Join the newsletter here:</h2>
             <form
               data-netlify='true'
               className='newsletter__form'
@@ -325,9 +325,9 @@ const Homepage = () => {
             id='partners'
           >
             <div className='partners'>
-              <p className='partners__title'>
+              <h2 className='partners__title'>
                 A big hug to our amazing partners
-              </p>
+              </h2>
               <div className='partners__partner-logos'>
                 {homepagePartners.map((item, index) => {
                   return (
@@ -340,28 +340,28 @@ const Homepage = () => {
             </div>
           </section>
           <section id='careers' ref={sectionSix} className='section'>
-            <h1 className='jobs__headline'>
+            <h2 className='jobs__headline'>
               Check out our <br />
               open positions
-            </h1>
+            </h2>
             {jobListings.map((item, index) => {
               return (
                 <div key={index} className='jobs__card'>
                   <div className='jobs__card-text-container'>
                     <p className='jobs__card-title'>Title</p>
-                    <p className='jobs__card-body'>{item.text}</p>
+                    <h3 className='jobs__card-body'>{item.text}</h3>
                   </div>
                   <div className='jobs__card-text-container'>
                     <p className='jobs__card-title'>Location</p>
-                    <p className='jobs__card-body'>
+                    <h3 className='jobs__card-body'>
                       {item.categories.location}
-                    </p>
+                    </h3>
                   </div>
                   <div className='jobs__card-text-container'>
                     <p className='jobs__card-title'>Type</p>
-                    <p className='jobs__card-body'>
+                    <h3 className='jobs__card-body'>
                       {item.categories.commitment}
-                    </p>
+                    </h3>
                   </div>
                   <div className='jobs__card-apply-container'>
                     <div
