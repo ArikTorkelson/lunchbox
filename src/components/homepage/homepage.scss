@@ -149,6 +149,12 @@
   }
 }
 
+// * {
+//   opacity: 0;
+//   animation: fade-in 1s forwards;
+//   animation-timing-function: cubic-bezier(.94,.04,.12,.95);
+// }
+
 .hero {
   font-size: clamp(18px, 5vw, 64px);
   font-weight: 400;
@@ -172,23 +178,40 @@
   h1 {
     opacity: 0;
     animation: fade-in 2s forwards;
+    animation-timing-function: cubic-bezier(.94,.04,.12,.95);
 
+    &:nth-child(1) {
+      animation-delay: 1s;
+    }
     &:nth-child(2) {
-      animation-delay: .15s;
+      animation-delay: 1.3s;
     }
     &:nth-child(3) {
-      animation-delay: .3s;
+      animation-delay: 1.6s;
     }
     &:nth-child(4) {
-      animation-delay: .45s;
+      animation-delay: 1.9s;
     }
-    &:nth-child(5) {
-      animation-delay: .6s;
-    }
+  }
+
+  &__text-container {
+    margin-top: -20px;
+    animation: drop-in .3s forwards;
+    animation-timing-function: cubic-bezier(.7,0,.48,1);
+    animation-delay: 3.3s;
   }
 
   @include breakpoint {
     height: 250px;
+  }
+}
+
+@keyframes drop-in {
+  from {
+    margin-top: -20px;
+  }
+  to {
+    margin-top: 0px;
   }
 }
 

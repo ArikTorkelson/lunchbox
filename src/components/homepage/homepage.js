@@ -239,10 +239,12 @@ const Homepage = () => {
                 Your browser does not support the video tag.
               </video>
             </div>
-            <h1>We are shaping the future</h1>
-            <h1>of competitive gaming</h1>
-            <h1>with a revolutionary</h1>
-            <h1>*new* MOBA.</h1>
+            <div className='hero__text-container'>
+              <h1>We are shaping the future</h1>
+              <h1>of competitive gaming</h1>
+              <h1>with a revolutionary</h1>
+              <h1>*new* MOBA.</h1>
+            </div>
           </section>
           <section
             ref={sectionTwo}
