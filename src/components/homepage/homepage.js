@@ -13,6 +13,7 @@ import discordLogo from '../../images/discord.svg';
 import lunchboxLogo from '../../images/lunchbox-logo.svg';
 import lunchboxFooterLogo from '../../images/lunchbox-logo-footer.svg';
 import heroVideo from '../../images/hero-vid.mp4';
+import heroPosterImg from '../../images/static-hero.jpg';
 
 const Homepage = () => {
   const dataProductImageCarousel = useStaticQuery(graphql`
@@ -83,6 +84,7 @@ const Homepage = () => {
   const [jobListings, setJobListings] = useState([]);
   const [activeSidebar, setActiveSidebar] = useState(0);
   const [showNewsletterLink, setShowNewsletterLink] = useState(false);
+  const heroVid = useRef(null);
   const sectionOne = useRef(null);
   const sectionTwo = useRef(null);
   const sectionThree = useRef(null);
@@ -105,7 +107,6 @@ const Homepage = () => {
       });
 
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -247,11 +248,18 @@ const Homepage = () => {
             <a href='#newsletter'>Join the newsletter</a>
           </header>
           <section ref={sectionOne} className='section hero'>
+            <div className='hero__text-container hero__text-container--mobile'>
+              <h1>We are shaping the future</h1>
+              <h1>of competitive gaming</h1>
+              <h1>with a revolutionary</h1>
+              <h1>*new* MOBA.</h1>
+            </div>
             <div className='hero__video'>
-              <video autoPlay muted>
+              <video autoPlay muted ref={heroVid}>
                 <source src={heroVideo} type='video/webm' />
                 Your browser does not support the video tag.
               </video>
+              <img src={heroPosterImg} />
             </div>
             <div className='hero__text-container'>
               <h1>We are shaping the future</h1>

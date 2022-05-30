@@ -193,7 +193,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  letter-spacing: -0.2;
+  letter-spacing: -0.2px;
   position: relative;
 
   &__video {
@@ -203,6 +203,23 @@
 
     video {
       width: 100%;
+      @include breakpoint {
+        display: none;
+      }
+    }
+
+    @include breakpoint {
+      position: relative;
+      height: auto;
+    }
+
+    img {
+      display: none;
+      width: 100%;
+
+      @include breakpoint {
+        display: block;
+      }
     }
   }
 
@@ -226,10 +243,28 @@
   }
 
   &__text-container {
-    margin-top: -20px;
     animation: drop-in .3s forwards;
     animation-timing-function: cubic-bezier(.7,0,.48,1);
     animation-delay: 3.3s;
+    position: absolute;
+    font-size: 4vw;
+    top: 26vw;
+
+    @include breakpoint {
+      display: none;
+      animation: none;
+      position: relative;
+      top: auto;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include breakpoint {
+        font-size: 24px;
+        display: block;
+      }
+    }
   }
 
   @include breakpoint {
