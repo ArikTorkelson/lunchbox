@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 import './homepage.scss';
 
 import 'swiper/css';
@@ -85,7 +85,6 @@ const Homepage = () => {
   const [jobListings, setJobListings] = useState([]);
   const [activeSidebar, setActiveSidebar] = useState(0);
   const [showNewsletterLink, setShowNewsletterLink] = useState(false);
-  const heroVid = useRef(null);
   const sectionOne = useRef(null);
   const sectionTwo = useRef(null);
   const sectionThree = useRef(null);
@@ -246,7 +245,7 @@ const Homepage = () => {
           >
             <a href='#newsletter'>Join the newsletter</a>
           </header>
-          <section ref={sectionOne} className='section hero'>
+          <section ref={sectionOne} className='hero'>
             <div className='hero__text-container hero__text-container--mobile'>
               <h1>We are shaping the future</h1>
               <h1>of competitive gaming</h1>
@@ -254,7 +253,7 @@ const Homepage = () => {
               <h1>*new* MOBA.</h1>
             </div>
             <div className='hero__video'>
-              <video autoPlay muted ref={heroVid} poster={heroPosterImg}>
+              <video autoPlay muted poster={heroPosterImg}>
                 <source src={heroVideo} type='video/webm' />
                 Your browser does not support the video tag.
               </video>

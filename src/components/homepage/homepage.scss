@@ -231,7 +231,6 @@
 .hero {
   font-size: clamp(18px, 5vw, 64px);
   font-weight: 400;
-  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -239,10 +238,6 @@
   position: relative;
 
   &__video {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-
     video {
       width: 100%;
       @include breakpoint {
@@ -290,7 +285,7 @@
     animation-delay: 3.3s;
     position: absolute;
     font-size: 4vw;
-    top: 26vw;
+    top: 20vw;
     margin-top: -20px;
 
     @include breakpoint {
