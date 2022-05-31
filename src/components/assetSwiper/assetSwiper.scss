@@ -70,6 +70,8 @@
   }
 }
 .swiper.asset-gallery-initialized {
+  height: 500px;
+  
   @include breakpoint {
     height: 250px;
   }

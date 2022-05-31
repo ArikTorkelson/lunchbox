@@ -13,7 +13,8 @@ import discordLogo from '../../images/discord.svg';
 import lunchboxLogo from '../../images/lunchbox-logo.svg';
 import lunchboxFooterLogo from '../../images/lunchbox-logo-footer.svg';
 import heroVideo from '../../images/hero-vid.mp4';
-import heroPosterImg from '../../images/static-hero.jpg';
+import heroPosterImg from '../../images/poster-image.jpg';
+import heroStaticImg from '../../images/static-hero.jpg';
 
 const Homepage = () => {
   const dataProductImageCarousel = useStaticQuery(graphql`
@@ -92,7 +93,6 @@ const Homepage = () => {
   const sectionFive = useRef(null);
   const sectionSix = useRef(null);
   const sectionSeven = useRef(null);
-  const scrollOffset = 0;
 
   useEffect(() => {
     fetch('https://api.lever.co/v0/postings/LunchboxEntertainment?mode=json')
@@ -113,11 +113,10 @@ const Homepage = () => {
   }, []);
 
   const handleScroll = () => {
-    const windowOffset =
-      scrollOffset + window.pageYOffset + window.innerHeight / 2;
+    const windowOffset = window.pageYOffset + window.innerHeight / 4;
 
     switch (true) {
-      case windowOffset < sectionOne.current.offsetTop + window.innerHeight / 2:
+      case windowOffset < sectionOne.current.offsetTop + window.innerHeight / 4:
         setActiveSidebar(0);
         break;
       case windowOffset < sectionTwo.current.offsetTop:
@@ -255,11 +254,11 @@ const Homepage = () => {
               <h1>*new* MOBA.</h1>
             </div>
             <div className='hero__video'>
-              <video autoPlay muted ref={heroVid}>
+              <video autoPlay muted ref={heroVid} poster={heroPosterImg}>
                 <source src={heroVideo} type='video/webm' />
                 Your browser does not support the video tag.
               </video>
-              <img src={heroPosterImg} />
+              <img src={heroStaticImg} />
             </div>
             <div className='hero__text-container'>
               <h1>We are shaping the future</h1>
