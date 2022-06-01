@@ -14,7 +14,8 @@ import lunchboxLogo from '../../images/lunchbox-logo.svg';
 import lunchboxFooterLogo from '../../images/lunchbox-logo-footer.svg';
 import heroVideo from '../../images/hero-vid.mp4';
 import heroPosterImg from '../../images/poster-image.jpg';
-import heroStaticImg from '../../images/static-hero.jpg';
+import heroStaticImgMobile from '../../images/static-hero-mobile.jpg';
+import lunchboxMobileLogo from '../../images/logo-lunchbox-horizontal-mobile.svg';
 
 const Homepage = () => {
   const dataProductImageCarousel = useStaticQuery(graphql`
@@ -245,19 +246,22 @@ const Homepage = () => {
           >
             <a href='#newsletter'>Join the newsletter</a>
           </header>
-          <section ref={sectionOne} className='hero'>
-            <div className='hero__text-container hero__text-container--mobile'>
+          <section className='hero--mobile'>
+            <img className='hero--mobile-padding' src={lunchboxMobileLogo} />
+            <div className='hero__text-container--mobile hero--mobile-padding'>
               <h1>We are shaping the future</h1>
               <h1>of competitive gaming</h1>
               <h1>with a revolutionary</h1>
               <h1>*new* MOBA.</h1>
             </div>
+            <img className='hero--mobile-hero' src={heroStaticImgMobile} />
+          </section>
+          <section ref={sectionOne} className='hero'>
             <div className='hero__video'>
               <video autoPlay muted poster={heroPosterImg}>
                 <source src={heroVideo} type='video/webm' />
                 Your browser does not support the video tag.
               </video>
-              <img src={heroStaticImg} />
             </div>
             <div className='hero__text-container'>
               <h1>We are shaping the future</h1>
