@@ -211,12 +211,12 @@
 }
 
 .section {
-  padding: 128px 160px 128px 0;
+  padding: 120px 160px 120px 0;
   position: relative;
   z-index: 1;
 
   @include breakpoint {
-    padding: 40px;
+    padding: 40px 24px;
   }
 }
 
@@ -527,18 +527,17 @@
   }
 
   &__partner-logos {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin: 48px 0;
+    row-gap: 40px;
     @include breakpoint {
-      display: grid;
       grid-template-columns: 50% 50%;
-      row-gap: 40px;
       margin-bottom: 48px;
     }
   }
 
   &__logo-container {
-    margin: 0 35px;
     @include breakpoint {
       display: flex;
       align-items: center;
@@ -548,12 +547,7 @@
   }
 
   img {
-    height: 72px;
-
-    @include breakpoint {
-      height: auto;
-      width: 100%;
-    }
+    width: 100%;
   }
 }
 

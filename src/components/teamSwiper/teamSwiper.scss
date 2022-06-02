@@ -20,6 +20,8 @@
 
   @include breakpointTeamSwiper {
     justify-content: end;
+    width: auto;
+    margin-right: 24px;
     
     &--hide-mobile {
       display: none;
@@ -52,6 +54,10 @@
     position: absolute;
     left: 0;
     font-size: 36px;
+
+    @include breakpoint {
+      left: 24px;
+    }
   }
 
   &__card-img-container {

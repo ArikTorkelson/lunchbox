@@ -397,12 +397,8 @@ const Homepage = () => {
             <div>
               <p>1234 Street Dr, Los Angeles, CA 55565</p>
               <p>Copyright ® 2022</p>
-              <p>Say something here.</p>
             </div>
             <div>
-              <a>
-                <img src={instagramLogo} />
-              </a>
               <a href='https://discord.gg/7Yt5RfP787'>
                 <img src={discordLogo} />
               </a>

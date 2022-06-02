@@ -14,7 +14,7 @@ const TeamSwiper = ({ data }) => {
   return (
     <div className='team-swiper-container'>
       <div className='custom-swiper-navigation'>
-        <p className='teammember__header'>The Lunchbox Team</p>
+        <h2 className='teammember__header'>The Lunchbox Team</h2>
         <div
           className='custom-swiper-navigation__control'
           onClick={() => swipeInstance?.slidePrev()}
