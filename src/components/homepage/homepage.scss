@@ -300,9 +300,10 @@
     animation-timing-function: cubic-bezier(.7,0,.48,1);
     animation-delay: 3.3s;
     position: absolute;
-    font-size: 4vw;
+    font-size: 5vw;
     top: 18vw;
     margin-top: -20px;
+    letter-spacing: -.5vw;
 
     @include breakpoint {
       display: none;
@@ -392,7 +393,6 @@
     background: white;
     border: 1px solid $tertiary-color;
     display: flex;
-    justify-content: space-between;
     position: relative;
     padding: 0 48px;
     height: 108px;
@@ -408,7 +408,13 @@
       width: auto;
     }
 
+    p:first-child {
+      width: 100%;
+    }
+
     p > input {
+      width: 100%;
+
       &::-webkit-input-placeholder {
         color: $secondary-color
       }
