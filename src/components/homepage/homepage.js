@@ -303,7 +303,7 @@ const Homepage = () => {
               onSubmit={handleSubmit}
             >
               <input type='hidden' name='form-name' value='newsletter' />
-              <p>
+              <p className='newsletter__form-submit-container'>
                 <input type='email' name='email' placeholder='E-mail' />
               </p>
               <p>

@@ -399,6 +399,10 @@
     height: 108px;
     width: 780px;
     max-width: 100%;
+    
+    &-submit-container {
+      width: 100%;
+    }
 
     &--submitted {
       color: #1B881E;
@@ -407,10 +411,6 @@
     @include breakpoint {
       padding: 0 12px;
       width: auto;
-    }
-
-    p:first-child {
-      width: 100%;
     }
 
     p > input {
@@ -437,8 +437,6 @@
       z-index: 1;
       display: flex;
       color: $secondary-color;
-
-      
 
       @include breakpoint {
         width: 50%;
