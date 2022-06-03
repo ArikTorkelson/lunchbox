@@ -254,7 +254,7 @@ $animation-timing: 1.4s;
     padding: 60px 0px;
 
     &-padding {
-      padding: 0px 40px;
+      padding: 0px 24px;
     }
 
     @include breakpoint {
@@ -556,13 +556,14 @@ $animation-timing: 1.4s;
   padding: 0 64px;
 
   @include breakpoint {
-    padding: 0 12px;
+    padding: 0;
     flex-direction: column;
   }
 
   &__title {
     font-size: 32px;
     width: 320px;
+    padding-left: 24px;
 
     @include breakpoint {
       margin: 48px 0;
@@ -729,6 +730,10 @@ $animation-timing: 1.4s;
     margin: 0 auto;
     height: 100%;
     justify-content: space-between;
+
+    @include breakpoint {
+      padding: 0px;
+    }
   }
 
   &__details {
@@ -737,6 +742,18 @@ $animation-timing: 1.4s;
 
     div {
       display: flex;
+
+      @include breakpoint {
+        margin-bottom: 8px;
+        flex-direction: column;
+
+        & p {
+          &:first-child {
+            margin-top: 48px;
+            margin-bottom: 8px;
+          }
+        }
+      }
     }
 
     p {
@@ -744,6 +761,8 @@ $animation-timing: 1.4s;
     }
 
     @include breakpoint {
+      flex-direction: column;
+
       p {
         margin-right: 4px;
       }
@@ -751,11 +770,16 @@ $animation-timing: 1.4s;
 
     img {
       margin-left: 24px;
+
+      @include breakpoint {
+        margin-left: 0px;
+      }
     }
   }
 
   @include breakpoint {
-    padding: 40px 12px 28px;
+    height: auto;
+    padding: 40px 24px 28px;
   }
 
   &__trademark {
