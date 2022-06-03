@@ -21,7 +21,7 @@
   @include breakpointTeamSwiper {
     justify-content: end;
     width: auto;
-    margin-right: 24px;
+    margin: 0 24px;
     
     &--hide-mobile {
       display: none;
