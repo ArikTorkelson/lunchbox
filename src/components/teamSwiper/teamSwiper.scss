@@ -46,6 +46,10 @@
         fill: white;
       }
     }
+
+    @include breakpointTeamSwiper {
+      margin-left: 16px;
+    }
   }
 }
 
