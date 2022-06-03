@@ -1,4 +1,8 @@
 @import '../../styles/base.scss';
+$big-space: 96px;
+$med-space: 64px;
+$bespoke-section-width: 1300px;
+
 
 .homepage {
   background-color: $background-color;
@@ -349,9 +353,7 @@
 
 .featurettes {
   display: flex;
-  @include wideBreakpoint {
-    gap: 12%;
-  }
+
   @include breakpoint {
     flex-direction: column;
   }
@@ -382,6 +384,15 @@
     font-size: 14px;
     padding-right: 24px;
   }
+
+  @include wideBreakpoint {
+    gap: 48px;
+    width: $bespoke-section-width;
+
+    &__item {
+      margin-right: 0;
+    }
+  }
 }
 
 .newsletter {
@@ -395,13 +406,40 @@
     border: 1px solid $tertiary-color;
     display: flex;
     position: relative;
-    padding: 0 48px;
-    height: 108px;
+    padding: 0 $med-space;
+    height: 180px;
     width: 780px;
     max-width: 100%;
+    margin-top: $med-space;
     
     &-submit-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       width: 100%;
+
+      & input {
+        border-bottom: 1px solid $tertiary-color !important;
+        height: 56px;
+        width: calc(100% - $med-space);
+
+        &::placeholder {
+          color: $text-color;
+        }
+      }
+    }
+
+    @include wideBreakpoint {
+      height: 250px;
+      padding: 0 $big-space;
+      margin-top: $big-space;
+      width: calc($bespoke-section-width - 96px * 2);
+
+      &-submit-container {
+        & input {
+          width: calc(100% - $big-space);
+        }
+      }
     }
 
     &--submitted {
@@ -411,26 +449,6 @@
     @include breakpoint {
       padding: 0 12px;
       width: auto;
-    }
-
-    p > input {
-      width: 100%;
-
-      &::-webkit-input-placeholder {
-        color: $secondary-color
-      }
-    
-      &::-moz-placeholder {
-          color: $secondary-color
-      }
-    
-      &::-ms-placeholder {
-          color: $secondary-color
-      }
-    
-      &::placeholder {
-          color: $secondary-color
-      }
     }
 
     p {
@@ -497,7 +515,12 @@
       z-index: 1;
 
       &[type=submit] {
+        color: $secondary-color;
         cursor: pointer;
+
+        &:hover {
+          color: $text-color;
+        }
       }
 
       &:focus {

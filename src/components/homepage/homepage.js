@@ -276,7 +276,7 @@ const Homepage = () => {
           >
             <AssetSwiper data={homepageProductImageCarousel} />
           </section>
-          <section className='section'>
+          <section id='newsletter' ref={sectionThree} className='section'>
             <div className='featurettes'>
               {homepageFeaturettes.map((item, index) => {
                 return (
@@ -293,9 +293,6 @@ const Homepage = () => {
                 );
               })}
             </div>
-          </section>
-          <section id='newsletter' ref={sectionThree} className='section'>
-            <h2 className='newsletter__title'>Join the newsletter here:</h2>
             <form
               data-netlify='true'
               className='newsletter__form'
@@ -304,7 +301,11 @@ const Homepage = () => {
             >
               <input type='hidden' name='form-name' value='newsletter' />
               <p className='newsletter__form-submit-container'>
-                <input type='email' name='email' placeholder='E-mail' />
+                <input
+                  type='email'
+                  name='email'
+                  placeholder='Enter your email'
+                />
               </p>
               <p>
                 {' '}
@@ -322,6 +323,7 @@ const Homepage = () => {
               </p>
             </form>
           </section>
+
           <section
             ref={sectionFour}
             className='section section--no-right-padding'
