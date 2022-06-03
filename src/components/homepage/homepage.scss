@@ -720,4 +720,9 @@
   @include breakpoint {
     padding: 40px 12px 28px;
   }
+
+  &__trademark {
+    font-size: 20px;
+    vertical-align: middle;
+  }
 }
