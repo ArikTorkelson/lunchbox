@@ -31,6 +31,7 @@
     display: inline-block;
     text-decoration: none;
     position: relative;
+    border-bottom: 1px solid transparent;
 
     &::after {
       background-color: $background-color;
