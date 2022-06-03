@@ -430,6 +430,13 @@ $animation-timing: 1.4s;
         height: 56px;
         width: calc(100% - $med-space);
 
+        @include breakpoint {
+          height: 28px;
+          @include breakpoint {
+            width: calc(100% - 24px);
+          }
+        }
+
         &::placeholder {
           color: $text-color;
         }
@@ -454,7 +461,8 @@ $animation-timing: 1.4s;
     }
 
     @include breakpoint {
-      padding: 0 12px;
+      height: 96px;
+      padding: 0 24px;
       width: auto;
     }
 
@@ -463,9 +471,6 @@ $animation-timing: 1.4s;
       display: flex;
       color: $secondary-color;
 
-      @include breakpoint {
-        width: 50%;
-      }
       &:last-child {
         @include breakpoint {
           justify-content: flex-end;
@@ -520,6 +525,10 @@ $animation-timing: 1.4s;
       border: none;
       font-size: 24px;
       z-index: 1;
+
+      @include breakpoint {
+        font-size: 16px;
+      }
 
       &[type=submit] {
         color: $secondary-color;
