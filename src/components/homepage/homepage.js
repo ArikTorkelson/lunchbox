@@ -358,7 +358,11 @@ const Homepage = () => {
             </h2>
             {jobListings.map((item, index) => {
               return (
-                <div key={index} className='jobs__card'>
+                <div
+                  key={index}
+                  className='jobs__card'
+                  onClick={() => window.open(item.hostedUrl, '_blank')}
+                >
                   <div className='jobs__card-text-container'>
                     <p className='jobs__card-title'>Title</p>
                     <h3 className='jobs__card-body'>{item.text}</h3>
@@ -376,12 +380,7 @@ const Homepage = () => {
                     </h3>
                   </div>
                   <div className='jobs__card-apply-container'>
-                    <div
-                      onClick={() => window.open(item.hostedUrl, '_blank')}
-                      className='jobs__card-apply'
-                    >
-                      Apply
-                    </div>
+                    <div className='jobs__card-apply'>Apply</div>
                   </div>
                 </div>
               );

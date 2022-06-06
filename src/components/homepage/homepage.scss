@@ -621,6 +621,7 @@ $animation-timing: 1.4s;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
+    cursor: pointer;
 
     @include breakpoint {
       height: auto;
@@ -716,7 +717,6 @@ $animation-timing: 1.4s;
       border: 1px solid $secondary-color;
       border-radius: 54px;
       padding: 12px 16px 10px;
-      cursor: pointer;
 
       &:hover {
         background-color: $text-color;
