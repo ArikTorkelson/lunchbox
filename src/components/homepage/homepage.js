@@ -377,7 +377,7 @@ const Homepage = () => {
                   </div>
                   <div className='jobs__card-apply-container'>
                     <div
-                      onClick={() => window.open(item.applyUrl, '_blank')}
+                      onClick={() => window.open(item.hostedUrl, '_blank')}
                       className='jobs__card-apply'
                     >
                       Apply
