@@ -8,7 +8,7 @@ import 'swiper/css';
 import AssetSwiper from '../assetSwiper/assetSwiper';
 import TeamSwiper from '../teamSwiper/teamSwiper';
 
-import instagramLogo from '../../images/insta.svg';
+import twitterLogo from '../../images/Icon-Twitter.svg';
 import discordLogo from '../../images/discord.svg';
 import lunchboxLogo from '../../images/lunchbox-logo.svg';
 import lunchboxFooterLogo from '../../images/lunchbox-logo-footer.svg';
@@ -114,24 +114,37 @@ const Homepage = () => {
 
   const handleScroll = () => {
     const windowOffset = window.pageYOffset + window.innerHeight / 4;
+    const elemOffset = 0.5;
 
     switch (true) {
       case windowOffset < sectionOne.current.offsetTop + window.innerHeight / 4:
         setActiveSidebar(0);
         break;
-      case windowOffset < sectionTwo.current.offsetTop:
+      case windowOffset <
+        sectionTwo.current.offsetTop +
+          sectionTwo.current.clientHeight * elemOffset:
         setActiveSidebar(1);
         break;
-      case windowOffset < sectionThree.current.offsetTop:
+      case windowOffset <
+        sectionThree.current.offsetTop +
+          sectionThree.current.clientHeight * elemOffset:
         setActiveSidebar(2);
         break;
-      case windowOffset < sectionFour.current.offsetTop:
+      case windowOffset <
+        sectionFour.current.offsetTop +
+          sectionFour.current.clientHeight * elemOffset:
         setActiveSidebar(3);
         break;
-      case windowOffset < sectionFive.current.offsetTop:
+      case windowOffset <
+        sectionFive.current.offsetTop +
+          sectionFive.current.clientHeight * elemOffset:
         setActiveSidebar(4);
         break;
-      case windowOffset - 50 < sectionSix.current.offsetTop:
+      case windowOffset - 50 <
+        sectionSix.current.offsetTop +
+          sectionSix.current.clientHeight * elemOffset &&
+        sectionSix.current.clientHeight + windowOffset <
+          sectionSeven.current.offsetTop:
         setActiveSidebar(5);
         break;
       case windowOffset < sectionSeven.current.offsetTop:
@@ -404,6 +417,9 @@ const Homepage = () => {
             <div>
               <a href='https://discord.gg/7Yt5RfP787'>
                 <img src={discordLogo} />
+              </a>
+              <a href='https://twitter.com/Lunchbox_Games'>
+                <img src={twitterLogo} />
               </a>
             </div>
           </div>

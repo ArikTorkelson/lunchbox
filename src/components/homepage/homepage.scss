@@ -3,6 +3,7 @@ $big-space: 96px;
 $med-space: 64px;
 $bespoke-section-width: 1300px;
 $animation-timing: 1.4s;
+// $animation-curve: cubic-bezier(.55,.52,.07,.97);
 
 
 .homepage {
@@ -249,7 +250,7 @@ $animation-timing: 1.4s;
 }
 
 .hero {
-  font-size: clamp(18px, 5vw, 64px);
+  font-size: clamp(18px, 5.5vw, 64px);
   font-weight: 400;
   display: flex;
   flex-direction: column;
@@ -320,10 +321,9 @@ $animation-timing: 1.4s;
     animation-timing-function: cubic-bezier(.7,0,.48,1);
     animation-delay: 3.3s;
     position: absolute;
-    font-size: 5vw;
     top: 18vw;
     margin-top: -20px;
-    letter-spacing: -.5vw;
+    letter-spacing: -.2vw;
 
     @include breakpoint {
       display: none;
