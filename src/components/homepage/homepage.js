@@ -117,7 +117,7 @@ const Homepage = () => {
     const elemOffset = 0.5;
 
     switch (true) {
-      case windowOffset < sectionOne.current.offsetTop + window.innerHeight / 4:
+      case windowOffset < sectionOne.current.offsetTop + window.innerHeight / 2:
         setActiveSidebar(0);
         break;
       case windowOffset <
