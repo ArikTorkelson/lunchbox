@@ -318,6 +318,7 @@ const Homepage = () => {
                   type='email'
                   name='email'
                   placeholder='Enter your email'
+                  className='newsletter__form-submit-container-input'
                 />
               </p>
               <p>

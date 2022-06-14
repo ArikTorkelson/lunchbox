@@ -433,7 +433,8 @@ $animation-timing: 1.4s;
       justify-content: center;
       width: 100%;
 
-      & input {
+      &-input {
+        border-radius: 0px;
         border-bottom: 1px solid $tertiary-color !important;
         height: 56px;
         width: calc(100% - $med-space);
@@ -458,7 +459,7 @@ $animation-timing: 1.4s;
       width: calc($bespoke-section-width - 96px * 2);
 
       &-submit-container {
-        & input {
+        &-input {
           width: calc(100% - $big-space);
         }
       }
@@ -481,7 +482,9 @@ $animation-timing: 1.4s;
 
       &:last-child {
         @include breakpoint {
+          font-weight: normal;
           justify-content: flex-end;
+          padding-right: 0px;
         }
       }
     }
