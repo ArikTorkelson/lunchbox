@@ -50,7 +50,12 @@ const TeamSwiper = ({ data }) => {
                 </div>
                 <p className='teammember__title'>{item.title}</p>
                 <h2 className='teammember__name'>{item.name}</h2>
-                <p className='teammember__bio'>{item.bio.bio}</p>
+                <p
+                  className='teammember__bio'
+                  style={{ whiteSpace: 'pre-line' }}
+                >
+                  {item.bio.bio}
+                </p>
               </div>
             </SwiperSlide>
           );
