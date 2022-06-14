@@ -409,7 +409,7 @@ const Homepage = () => {
           </div>
           <div className='footer__details'>
             <div>
-              <p>1234 Street Dr, Los Angeles, CA 55565</p>
+              <p>U.S. based gaming studio</p>
               <p>
                 Copyright <span className='footer__trademark'>®</span> 2022
               </p>

@@ -40,6 +40,12 @@ const TeamSwiper = ({ data }) => {
         slidesPerView={'auto'}
         spaceBetween={32}
         onBeforeInit={(swipper) => setSwipeInstance(swipper)}
+        slidesOffsetBefore={24}
+        breakpoints={{
+          980: {
+            slidesOffsetBefore: 0,
+          },
+        }}
       >
         {data.map((item, index) => {
           return (
