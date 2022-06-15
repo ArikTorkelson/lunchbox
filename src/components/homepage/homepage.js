@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
-import { useEffect, useRef, useState, useMemo } from 'react';
+import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import './homepage.scss';
 
 import 'swiper/css';
@@ -93,6 +93,7 @@ const Homepage = () => {
   const sectionFive = useRef(null);
   const sectionSix = useRef(null);
   const sectionSeven = useRef(null);
+  const homepageRef = useRef(null);
 
   useEffect(() => {
     fetch('https://api.lever.co/v0/postings/LunchboxEntertainment?mode=json')
@@ -178,7 +179,7 @@ const Homepage = () => {
   };
 
   return (
-    <div className='homepage' onScroll={handleScroll}>
+    <div className='homepage' onScroll={handleScroll} ref={homepageRef}>
       <div className='homepage-container'>
         <div className='sidebar'>
           <div className='sidebar__logo-container'>
@@ -272,7 +273,7 @@ const Homepage = () => {
           <section ref={sectionOne} className='hero'>
             <div className='hero__video'>
               <video autoPlay muted poster={heroPosterImg}>
-                <source src={heroVideo} type='video/webm' />
+                <source type='video/webm' />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -357,8 +358,8 @@ const Homepage = () => {
               <div className='partners__partner-logos'>
                 {homepagePartners.map((item, index) => {
                   return (
-                    <div className='partners__logo-container'>
-                      <img key={index} src={item.img.file.url} />
+                    <div key={index} className='partners__logo-container'>
+                      <img src={item.img.file.url} />
                     </div>
                   );
                 })}
