@@ -40,6 +40,12 @@ const AssetSwiper = ({ data }) => {
         spaceBetween={32}
         onBeforeInit={(swipper) => setSwipeInstance(swipper)}
         containerModifierClass={'asset-gallery-'}
+        slidesOffsetBefore={24}
+        breakpoints={{
+          980: {
+            slidesOffsetBefore: 0,
+          },
+        }}
       >
         {data.map((item, index) => {
           return (

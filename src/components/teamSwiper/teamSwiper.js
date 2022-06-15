@@ -55,7 +55,7 @@ const TeamSwiper = ({ data }) => {
                   <img src={item.photo.file.url} />
                 </div>
                 <p className='teammember__title'>{item.title}</p>
-                <h2 className='teammember__name'>{item.name}</h2>
+                <h3 className='teammember__name'>{item.name}</h3>
                 <p
                   className='teammember__bio'
                   style={{ whiteSpace: 'pre-line' }}

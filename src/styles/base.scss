@@ -14,29 +14,72 @@
   @media (max-width: 1200px) { @content ; }
 }
 
-p {
-  font-size: 14px;
-
+p, a {
   @include wideBreakpoint {
+    font-size: 18px;
+    letter-spacing: -1%;
+    line-height: 24px;
+  }
+
+  font-size: 16px;
+  letter-spacing: -1%;
+  line-height: 19px;
+
+  @include breakpoint {
     font-size: 16px;
+    letter-spacing: -1%;
+    line-height: 19px;
+  }
+}
+
+h1 {
+  @include wideBreakpoint {
+    font-size: 5.5vw;
+    letter-spacing: -.2vw;
+  }
+
+  font-size: 5.5vw;
+  letter-spacing: -.2vw;
+
+  @include breakpoint {
+    font-size: 7vw;
+    letter-spacing: -.2vw;
   }
 }
 
 h2 {
-  @include breakpoint {
-    font-size: 24px !important;
-  }
   @include wideBreakpoint {
-    font-size: 36px !important;
+    font-size: 45px;
+    letter-spacing: -1%;
+    line-height: 52px;
+  }
+
+  font-size: 32px;
+  letter-spacing: -1%;
+  line-height: 36px;
+
+  @include breakpoint {
+    font-size: 24px;
+    letter-spacing: -1%;
+    line-height: 28px;
   }
 }
 
 h3 {
-  @include breakpoint {
-    font-size: 16px !important;
-  }
   @include wideBreakpoint {
-    font-size: 28px !important;
+    font-size: 36px;
+    letter-spacing: -1%;
+    line-height: 44px;
+  }
+
+  font-size: 24px;
+  letter-spacing: -1%;
+  line-height: 28px;
+
+  @include breakpoint {
+    font-size: 24px;
+    letter-spacing: -1%;
+    line-height: 28px;
   }
 }
 

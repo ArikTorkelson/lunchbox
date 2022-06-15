@@ -138,6 +138,10 @@ $animation-timing: 1.4s;
   margin-top: 48px;
   z-index: 111;
 
+  &__number {
+    font-size: .75em;
+  }
+
   &__logo-container {
     position: fixed;
     width: fit-content;
@@ -190,7 +194,6 @@ $animation-timing: 1.4s;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 11px;
         flex-shrink: 0;
       }
     }
@@ -253,7 +256,6 @@ $animation-timing: 1.4s;
 }
 
 .hero {
-  font-size: clamp(18px, 5.5vw, 64px);
   font-weight: 400;
   display: flex;
   flex-direction: column;
@@ -342,7 +344,6 @@ $animation-timing: 1.4s;
       margin: 96px 0 60px;
 
       @include breakpoint {
-        font-size: 24px;
         display: block;
       }
     }
@@ -397,12 +398,10 @@ $animation-timing: 1.4s;
   }
 
   &__title {
-    font-size: 24px;
     margin: 24px 0;
   }
 
   &__subtitle {
-    font-size: 14px;
     padding-right: 24px;
   }
 
@@ -418,7 +417,6 @@ $animation-timing: 1.4s;
 
 .newsletter {
   &__title {
-    font-size: 32px;
     padding-bottom: 24px;
   }
 
@@ -538,9 +536,23 @@ $animation-timing: 1.4s;
     }
 
     input, button {
+      @include wideBreakpoint {
+        font-size: 45px;
+        letter-spacing: -1%;
+        line-height: 52px;
+      }
+    
+      font-size: 32px;
+      letter-spacing: -1%;
+      line-height: 36px;
+    
+      @include breakpoint {
+        font-size: 24px;
+        letter-spacing: -1%;
+        line-height: 28px;
+      }
       background: none;
       border: none;
-      font-size: 24px;
       z-index: 1;
 
       @include breakpoint {
@@ -578,7 +590,6 @@ $animation-timing: 1.4s;
   }
 
   &__title {
-    font-size: 32px;
     width: 320px;
     padding-left: 24px;
 
@@ -616,7 +627,6 @@ $animation-timing: 1.4s;
 
 .jobs {
   &__headline {
-    font-size: 32px;
     margin-bottom: 48px;
   }
 
@@ -703,12 +713,10 @@ $animation-timing: 1.4s;
     }
 
     &-title {
-      font-size: 14px;
       color: $secondary-color;
     }
 
     &-body {
-      font-size: 24px;
       margin-top: 16px;
       @include breakpoint {
         margin-top: 12px;

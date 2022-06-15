@@ -188,7 +188,7 @@ const Homepage = () => {
           <div className='sidebar__section'>
             {activeSidebar === 0 && (
               <div>
-                <p>01</p>
+                <p className='sidebar__number'>01</p>
                 <div className='sidebar__name'>
                   <hr />
                   <p>Our mission</p>
@@ -197,7 +197,7 @@ const Homepage = () => {
             )}
             {activeSidebar === 1 && (
               <div>
-                <p>02</p>
+                <p className='sidebar__number'>02</p>
                 <div className='sidebar__name'>
                   <hr />
                   <p>Screenshots</p>
@@ -206,7 +206,7 @@ const Homepage = () => {
             )}
             {activeSidebar === 2 && (
               <div>
-                <p>03</p>
+                <p className='sidebar__number'>03</p>
                 <div className='sidebar__name'>
                   <hr />
                   <p>Newsletter</p>
@@ -215,7 +215,7 @@ const Homepage = () => {
             )}
             {activeSidebar === 3 && (
               <div>
-                <p>04</p>
+                <p className='sidebar__number'>04</p>
                 <div className='sidebar__name'>
                   <hr />
                   <p>Our Team</p>
@@ -224,7 +224,7 @@ const Homepage = () => {
             )}
             {activeSidebar === 4 && (
               <div>
-                <p>05</p>
+                <p className='sidebar__number'>05</p>
                 <div className='sidebar__name'>
                   <hr />
                   <p>Partners</p>
@@ -233,7 +233,7 @@ const Homepage = () => {
             )}
             {activeSidebar === 5 && (
               <div>
-                <p>06</p>
+                <p className='sidebar__number'>06</p>
                 <div className='sidebar__name'>
                   <hr />
                   <p>Careers</p>
@@ -273,7 +273,7 @@ const Homepage = () => {
           <section ref={sectionOne} className='hero'>
             <div className='hero__video'>
               <video autoPlay muted poster={heroPosterImg}>
-                <source type='video/webm' />
+                <source src={heroVideo} type='video/webm' />
                 Your browser does not support the video tag.
               </video>
             </div>
