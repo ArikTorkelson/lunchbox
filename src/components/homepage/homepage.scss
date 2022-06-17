@@ -3,7 +3,13 @@ $big-space: 96px;
 $med-space: 64px;
 $bespoke-section-width: 1300px;
 $animation-timing: 1.4s;
-// $animation-curve: cubic-bezier(.55,.52,.07,.97);
+
+#mobile-newsletter {
+  display: block;
+  position: relative;
+  top: -75px;
+  visibility: hidden;
+}
 
 
 .homepage {
@@ -99,7 +105,6 @@ $animation-timing: 1.4s;
     right: 0;
     text-align: right;
     
-
     a {
       background-color: white;
       margin-right: 48px;
@@ -138,6 +143,9 @@ $animation-timing: 1.4s;
     @include breakpoint {
       top: 48px;
       text-align: center;
+      left: 50%;
+      transform: translate(-50%, 0);
+      right: auto;
     }
 
     &--show {
