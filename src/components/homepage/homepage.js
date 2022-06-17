@@ -17,6 +17,7 @@ import heroVideo from '../../images/hero-vid.mp4';
 import heroPosterImg from '../../images/poster-image.jpg';
 import heroStaticImgMobile from '../../images/static-hero-mobile.jpg';
 import lunchboxMobileLogo from '../../images/logo-lunchbox-horizontal-mobile.svg';
+import LBMETA from '../../images/lunchbox-meta.png';
 
 const Homepage = () => {
   const dataProductImageCarousel = useStaticQuery(graphql`
@@ -190,25 +191,31 @@ const Homepage = () => {
         />
 
         <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://metatags.io/' />
+        <meta
+          property='og:url'
+          content='https://www.lunchboxentertainment.com/'
+        />
         <meta property='og:title' content='Lunchbox Entertainment' />
         <meta
           property='og:description'
           content='We are shaping the future of competitive gaming.'
         />
-        <meta property='og:image' content='/src/images/lunchbox-meta.jpg' />
+        <meta property='og:image' content={LBMETA} />
 
-        <meta property='twitter:card' content='summary_large_image' />
-        <meta property='twitter:url' content='https://metatags.io/' />
+        <meta
+          property='twitter:card'
+          content='We are shaping the future of competitive gaming.'
+        />
+        <meta
+          property='twitter:url'
+          content='https://www.lunchboxentertainment.com/'
+        />
         <meta property='twitter:title' content='Lunchbox Entertainment' />
         <meta
           property='twitter:description'
           content='We are shaping the future of competitive gaming.'
         />
-        <meta
-          property='twitter:image'
-          content='/src/images/lunchbox-meta.jpg'
-        />
+        <meta property='twitter:image' content={LBMETA} />
         <link rel='icon' href='../../images/favicon.ico' type='image/x-icon' />
 
         <link
