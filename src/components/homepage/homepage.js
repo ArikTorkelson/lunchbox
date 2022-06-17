@@ -416,12 +416,12 @@ const Homepage = () => {
           </div>
           <div className='footer__details'>
             <div>
-              <p>U.S. based gaming studio</p>
+              <p>U.S. based gaming studio </p>
               <p>
                 Copyright <span className='footer__trademark'>®</span> 2022
               </p>
             </div>
-            <div>
+            <div className='footer__social'>
               <a href='https://discord.gg/7Yt5RfP787'>
                 <img src={discordLogo} />
               </a>

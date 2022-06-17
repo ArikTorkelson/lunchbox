@@ -753,7 +753,7 @@ $animation-timing: 1.4s;
 .footer {
   background: #E5E9EC;
   height: 182px;
-  padding: 40px 0 28px;
+  padding: 48px 0;
 
   &__content {
     display: flex;
@@ -771,19 +771,16 @@ $animation-timing: 1.4s;
   &__details {
     display: flex;
     justify-content: space-between;
+    display: flex;
 
-    div {
-      display: flex;
+    @include breakpoint {
+      margin-bottom: 8px;
+      flex-direction: column;
 
-      @include breakpoint {
-        margin-bottom: 8px;
-        flex-direction: column;
-
-        & p {
-          &:first-child {
-            margin-top: 48px;
-            margin-bottom: 8px;
-          }
+      & p {
+        &:first-child {
+          margin-top: 48px;
+          margin-bottom: 8px;
         }
       }
     }
@@ -817,5 +814,14 @@ $animation-timing: 1.4s;
   &__trademark {
     font-size: 20px;
     vertical-align: middle;
+  }
+
+  &__social {
+    @include breakpoint {
+      margin-top: 48px;
+      a:first-child {
+        margin-right: 16px;
+      }
+    }
   }
 }

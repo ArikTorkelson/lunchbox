@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
+import Markdown from 'marked-react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -60,7 +61,7 @@ const TeamSwiper = ({ data }) => {
                   className='teammember__bio'
                   style={{ whiteSpace: 'pre-line' }}
                 >
-                  {item.bio.bio}
+                  <Markdown value={item.bio.bio} />
                 </p>
               </div>
             </SwiperSlide>
