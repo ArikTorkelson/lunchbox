@@ -57,12 +57,12 @@ const TeamSwiper = ({ data }) => {
                 </div>
                 <p className='teammember__title'>{item.title}</p>
                 <h3 className='teammember__name'>{item.name}</h3>
-                <p
+                <div
                   className='teammember__bio'
                   style={{ whiteSpace: 'pre-line' }}
                 >
                   <Markdown value={item.bio.bio} />
-                </p>
+                </div>
               </div>
             </SwiperSlide>
           );
