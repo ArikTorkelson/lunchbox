@@ -385,6 +385,8 @@ $animation-timing: 1.4s;
 
     @include breakpoint {
       margin-top: 48px;
+      text-align: center;
+      margin-left: 48px;
     }
 
     &:last-child {

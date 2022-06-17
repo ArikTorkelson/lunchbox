@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
+import { Helmet } from 'react-helmet';
 import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import './homepage.scss';
 
@@ -180,6 +181,10 @@ const Homepage = () => {
 
   return (
     <div className='homepage' onScroll={handleScroll} ref={homepageRef}>
+      <Helmet>
+        <meta charSet='utf-8' />
+        <title>Lunchbox Entertainment</title>
+      </Helmet>
       <div className='homepage-container'>
         <div className='sidebar'>
           <div className='sidebar__logo-container'>
