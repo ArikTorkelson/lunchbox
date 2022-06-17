@@ -17,7 +17,6 @@ import heroVideo from '../../images/hero-vid.mp4';
 import heroPosterImg from '../../images/poster-image.jpg';
 import heroStaticImgMobile from '../../images/static-hero-mobile.jpg';
 import lunchboxMobileLogo from '../../images/logo-lunchbox-horizontal-mobile.svg';
-import LBMETA from '../../images/lunchbox-meta.jpg';
 
 const Homepage = () => {
   const dataProductImageCarousel = useStaticQuery(graphql`
@@ -200,7 +199,10 @@ const Homepage = () => {
           property='og:description'
           content='We are shaping the future of competitive gaming.'
         />
-        <meta property='og:image' content={LBMETA} />
+        <meta
+          property='og:image'
+          content='https://images.ctfassets.net/5ywyur77omkg/350kVpMKxm8FpSUgXbWtg/fdd44c522593d946ea250148bea99bf3/lunchbox-meta.jpg'
+        />
 
         <meta
           property='twitter:card'
@@ -215,7 +217,10 @@ const Homepage = () => {
           property='twitter:description'
           content='We are shaping the future of competitive gaming.'
         />
-        <meta property='twitter:image' content={LBMETA} />
+        <meta
+          property='twitter:image'
+          content='https://images.ctfassets.net/5ywyur77omkg/350kVpMKxm8FpSUgXbWtg/fdd44c522593d946ea250148bea99bf3/lunchbox-meta.jpg'
+        />
 
         <link
           rel='apple-touch-icon'
