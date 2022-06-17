@@ -216,7 +216,6 @@ const Homepage = () => {
           content='We are shaping the future of competitive gaming.'
         />
         <meta property='twitter:image' content={LBMETA} />
-        <link rel='icon' href='../../images/favicon.ico' type='image/x-icon' />
 
         <link
           rel='apple-touch-icon'
