@@ -196,10 +196,7 @@ const Homepage = () => {
           property='og:description'
           content='We are shaping the future of competitive gaming.'
         />
-        <meta
-          property='og:image'
-          content='https://images.ctfassets.net/5ywyur77omkg/350kVpMKxm8FpSUgXbWtg/fdd44c522593d946ea250148bea99bf3/lunchbox-meta.jpgg'
-        />
+        <meta property='og:image' content='/src/images/lunchbox-meta.jpg' />
 
         <meta property='twitter:card' content='summary_large_image' />
         <meta property='twitter:url' content='https://metatags.io/' />
@@ -210,7 +207,7 @@ const Homepage = () => {
         />
         <meta
           property='twitter:image'
-          content='https://images.ctfassets.net/5ywyur77omkg/350kVpMKxm8FpSUgXbWtg/fdd44c522593d946ea250148bea99bf3/lunchbox-meta.jpg'
+          content='/src/images/lunchbox-meta.jpg'
         />
         <link rel='icon' href='../../images/favicon.ico' type='image/x-icon' />
 
