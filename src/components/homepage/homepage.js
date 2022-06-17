@@ -297,7 +297,15 @@ const Homepage = () => {
               showNewsletterLink && 'navbar__right--show'
             }`}
           >
-            <a href='#newsletter'>Join the newsletter</a>
+            <a className='navbar__right-newsletter-button' href='#newsletter'>
+              Join the newsletter
+            </a>
+            <a
+              className='navbar__right-newsletter-button--mobile'
+              href='#mobile-newsletter'
+            >
+              Join the newsletter
+            </a>
           </header>
           <section className='hero--mobile'>
             <img className='hero--mobile-padding' src={lunchboxMobileLogo} />
@@ -345,6 +353,7 @@ const Homepage = () => {
                   </div>
                 );
               })}
+              <span id='mobile-newsletter'></span>
             </div>
             <form
               data-netlify='true'
