@@ -17,7 +17,7 @@ import heroVideo from '../../images/hero-vid.mp4';
 import heroPosterImg from '../../images/poster-image.jpg';
 import heroStaticImgMobile from '../../images/static-hero-mobile.jpg';
 import lunchboxMobileLogo from '../../images/logo-lunchbox-horizontal-mobile.svg';
-import LBMETA from '../../images/lunchbox-meta.png';
+import LBMETA from '../../images/lunchbox-meta.jpg';
 
 const Homepage = () => {
   const dataProductImageCarousel = useStaticQuery(graphql`
