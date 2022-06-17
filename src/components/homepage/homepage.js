@@ -182,8 +182,42 @@ const Homepage = () => {
   return (
     <div className='homepage' onScroll={handleScroll} ref={homepageRef}>
       <Helmet>
-        <meta charSet='utf-8' />
         <title>Lunchbox Entertainment</title>
+        <meta name='title' content='Lunchbox Entertainment' />
+        <meta
+          name='description'
+          content='We are shaping the future of competitive gaming.'
+        />
+
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content='https://metatags.io/' />
+        <meta property='og:title' content='Lunchbox Entertainment' />
+        <meta
+          property='og:description'
+          content='We are shaping the future of competitive gaming.'
+        />
+        <meta
+          property='og:image'
+          content='https://images.ctfassets.net/5ywyur77omkg/350kVpMKxm8FpSUgXbWtg/fdd44c522593d946ea250148bea99bf3/lunchbox-meta.jpgg'
+        />
+
+        <meta property='twitter:card' content='summary_large_image' />
+        <meta property='twitter:url' content='https://metatags.io/' />
+        <meta property='twitter:title' content='Lunchbox Entertainment' />
+        <meta
+          property='twitter:description'
+          content='We are shaping the future of competitive gaming.'
+        />
+        <meta
+          property='twitter:image'
+          content='https://images.ctfassets.net/5ywyur77omkg/350kVpMKxm8FpSUgXbWtg/fdd44c522593d946ea250148bea99bf3/lunchbox-meta.jpg'
+        />
+        <link rel='icon' href='../../images/favicon.ico' type='image/x-icon' />
+
+        <link
+          rel='apple-touch-icon'
+          href='../../images/android-chrome-512x512.png'
+        />
       </Helmet>
       <div className='homepage-container'>
         <div className='sidebar'>

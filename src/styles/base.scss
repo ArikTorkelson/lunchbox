@@ -7,7 +7,7 @@
 }
 
 @mixin wideBreakpoint {
-  @media (min-width: 1400px) { @content ;}
+  @media (min-width: 1680px) { @content ;}
 }
 
 @mixin breakpointTeamSwiper {
