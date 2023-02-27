@@ -473,7 +473,7 @@ const Homepage = () => {
               </p>
             </div>
             <div className='footer__social'>
-              <a href='https://discord.gg/7Yt5RfP787'>
+              <a href='https://discord.gg/ZfPSWBwUFx'>
                 <img src={discordLogo} />
               </a>
               <a href='https://twitter.com/Lunchbox_Games'>
