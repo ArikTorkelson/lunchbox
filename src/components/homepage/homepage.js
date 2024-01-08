@@ -321,10 +321,10 @@ const Homepage = () => {
                             src={lunchboxMobileLogo}
                         />
                         <div className='hero__text-container--mobile hero--mobile-padding'>
-                            <h1>We are shaping the future</h1>
-                            <h1>of competitive gaming</h1>
-                            <h1>with a revolutionary</h1>
-                            <h1>new MOBA.</h1>
+                            <h1>Championing</h1>
+                            <h1>a new era</h1>
+                            <h1>of competitive</h1>
+                            <h1>play.</h1>
                         </div>
                         <img
                             className='hero--mobile-hero'
@@ -339,10 +339,10 @@ const Homepage = () => {
                             </video>
                         </div>
                         <div className='hero__text-container'>
-                            <h1>We are shaping the future</h1>
-                            <h1>of competitive gaming</h1>
-                            <h1>with a revolutionary</h1>
-                            <h1>new MOBA.</h1>
+                            <h1>Championing</h1>
+                            <h1>a new era</h1>
+                            <h1>of competitive</h1>
+                            <h1>play.</h1>
                         </div>
                     </section>
                     <section
