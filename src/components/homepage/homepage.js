@@ -271,7 +271,7 @@ const Homepage = () => {
                                 <p className='sidebar__number'>05</p>
                                 <div className='sidebar__name'>
                                     <hr />
-                                    <p>Partners</p>
+                                    <p></p>
                                 </div>
                             </div>
                         )}
