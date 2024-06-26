@@ -298,8 +298,8 @@ const Homepage = () => {
                     <header className='navbar'>
                         <div className='navbar__left'>
                             <a href='#our-team'>Our team</a>
-                            <a id='hidden' href='#partners'>Partners</a>
-                            <a id='hidden' href='#careers'>Careers</a>
+                            <a className='hidden' href='#partners'>Partners</a>
+                            <a className='hidden' href='#careers'>Careers</a>
                         </div>
                         <div className='navbar__left'>
                             <a href='#newsletter'>Join the newsletter</a>
