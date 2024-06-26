@@ -176,16 +176,16 @@ const Homepage = () => {
     return (
         <div className='homepage' onScroll={handleScroll} ref={homepageRef}>
             <Helmet>
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRCQ6GR13H"></script>
-                window.onload = function(){
-                    <script async>
-                        window.dataLayer = window.dataLayer || []
-                        function gtag(){dataLayer.push(arguments)}
-                        gtag('js', new Date())
 
-                        gtag('config', 'G-SRCQ6GR13H')
-                    </script>
-                }
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRCQ6GR13H"></script>
+                
+                var scriptGtag = document.createElement('script')
+                scriptGtag.text = "window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments)};
+                    gtag('js', new Date());
+                    gtag('config', 'G-SRCQ6GR13H');"
+                document.head.appendChild(scriptGtag);
+
                 <title>Lunchbox Entertainment</title>
                 <meta name='title' content='Lunchbox Entertainment' />
                 <meta
