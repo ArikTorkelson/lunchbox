@@ -177,13 +177,15 @@ const Homepage = () => {
         <div className='homepage' onScroll={handleScroll} ref={homepageRef}>
             <Helmet>
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRCQ6GR13H"></script>
-                <script>
-                    window.dataLayer = window.dataLayer || []
-                    function gtag(){dataLayer.push(arguments)}
-                    gtag('js', new Date())
+                window.onload = function(){
+                    <script>
+                        window.dataLayer = window.dataLayer || []
+                        function gtag(){dataLayer.push(arguments)}
+                        gtag('js', new Date())
 
-                    gtag('config', 'G-SRCQ6GR13H')
-                </script>
+                        gtag('config', 'G-SRCQ6GR13H')
+                    </script>
+                }
                 <title>Lunchbox Entertainment</title>
                 <meta name='title' content='Lunchbox Entertainment' />
                 <meta
