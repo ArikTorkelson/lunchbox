@@ -176,6 +176,14 @@ const Homepage = () => {
     return (
         <div className='homepage' onScroll={handleScroll} ref={homepageRef}>
             <Helmet>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRCQ6GR13H"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || []
+                    function gtag(){dataLayer.push(arguments)}
+                    gtag('js', new Date())
+
+                    gtag('config', 'G-SRCQ6GR13H')
+                </script>
                 <title>Lunchbox Entertainment</title>
                 <meta name='title' content='Lunchbox Entertainment' />
                 <meta
@@ -290,8 +298,8 @@ const Homepage = () => {
                     <header className='navbar'>
                         <div className='navbar__left'>
                             <a href='#our-team'>Our team</a>
-                            <a href='#partners'>Partners</a>
-                            <a href='#careers'>Careers</a>
+                            <a id='hidden' href='#partners'>Partners</a>
+                            <a id='hidden' href='#careers'>Careers</a>
                         </div>
                         <div className='navbar__left'>
                             <a href='#newsletter'>Join the newsletter</a>
