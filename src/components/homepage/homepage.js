@@ -178,7 +178,7 @@ const Homepage = () => {
             <Helmet>
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRCQ6GR13H"></script>
                 window.onload = function(){
-                    <script>
+                    <script async>
                         window.dataLayer = window.dataLayer || []
                         function gtag(){dataLayer.push(arguments)}
                         gtag('js', new Date())
