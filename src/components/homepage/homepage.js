@@ -371,10 +371,7 @@ const Homepage = () => {
                     <p className="featurettes__subtitle">
                       {item.subtitle.subtitle.split(' ').map((word, index) =>
                         word.includes('Discord') ? (
-                          <a
-                            key={index}
-                            href="https://www.reddit.com/r/Sirocco"
-                          >
+                          <a key={index} href="https://discord.gg/3SwQ929cZA">
                             {word}
                           </a>
                         ) : word.includes('Steam') ? (
