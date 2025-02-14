@@ -157,6 +157,26 @@ a.hidden {
   }
 }
 
+.navbar__left a {
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+}
+
+.navbar__left img {
+  margin-right: 8px; /* Adds space between the icon and text */
+  vertical-align: middle; /* Ensures the icon is vertically centered */
+}
+
+.navbar__right-newsletter-button {
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+}
+
+.navbar__right-newsletter-button img {
+  margin-right: 8px; /* Adds space between the icon and text */
+  vertical-align: middle; /* Ensures the icon is vertically centered */
+}
+
 .sidebar {
   height: 100%;
   width: 11%;
@@ -425,8 +445,8 @@ a.hidden {
   }
 
   &__icon {
-    height: 164px;
-    width: 164px;
+    height: 214px;
+    width: 214px;
   }
 
   &__title {
@@ -845,9 +865,110 @@ a.hidden {
   &__social {
     @include breakpoint {
       margin-top: 48px;
-      a:first-child {
+      a {
         margin-right: 16px;
       }
+    }
+  }
+
+  &__links {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    a {
+      color: $text-color;
+      text-decoration: underline;
+      margin-bottom: 8px;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    @include breakpoint {
+      flex-direction: row;
+      align-items: center;
+
+      a {
+        margin-right: 16px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__branding {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 16px;
+
+    img {
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+  }
+
+  &__links-social {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @include breakpoint {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    a {
+      color: $text-color;
+      text-decoration: underline;
+      margin-bottom: 8px;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    @include breakpoint {
+      flex-direction: row;
+      align-items: center;
+
+      a {
+        margin-right: 16px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin-right: 16px;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @include breakpoint {
+      margin-top: 16px;
     }
   }
 }
