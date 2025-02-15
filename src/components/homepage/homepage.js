@@ -446,7 +446,7 @@ const Homepage = () => {
             <img src={lunchboxFooterLogo} />{' '}
             <p>
               U.S. based gaming studio. Copyright{' '}
-              <span className="footer__trademark">®</span> 2022
+              <span className="footer__trademark">®</span> 2025
             </p>
           </div>
           <div className="footer__links-social">
