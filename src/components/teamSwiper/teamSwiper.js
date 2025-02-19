@@ -1,32 +1,32 @@
-import * as React from 'react';
-import { useState } from 'react';
-import Markdown from 'marked-react';
+import * as React from 'react'
+import { useState } from 'react'
+import Markdown from 'marked-react'
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import { FreeMode } from 'swiper';
-import { LeftArrow } from '../../images/leftArrow.js';
-import { RightArrow } from '../../images/rightArrow.js';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import { FreeMode } from 'swiper'
+import { LeftArrow } from '../../images/leftArrow.js'
+import { RightArrow } from '../../images/rightArrow.js'
 
-import './teamSwiper.scss';
+import './teamSwiper.scss'
 
 const TeamSwiper = ({ data }) => {
-  const [swipeInstance, setSwipeInstance] = useState(null);
+  const [swipeInstance, setSwipeInstance] = useState(null)
   return (
-    <div className='team-swiper-container'>
-      <div className='custom-swiper-navigation'>
-        <h2 className='teammember__header'>The Lunchbox Team</h2>
+    <div className="team-swiper-container">
+      <div className="custom-swiper-navigation">
+        <h2 className="teammember__header">The Lunchbox Team</h2>
         <div
-          className='custom-swiper-navigation__control'
+          className="custom-swiper-navigation__control"
           onClick={() => swipeInstance?.slidePrev()}
         >
           <LeftArrow />
         </div>
-        <hr className='custom-swiper-navigation--hide-mobile' />
-        <p className='custom-swiper-navigation--hide-mobile'>Drag to view</p>
-        <hr className='custom-swiper-navigation--hide-mobile' />
+        <hr className="custom-swiper-navigation--hide-mobile" />
+        <p className="custom-swiper-navigation--hide-mobile">Drag to view</p>
+        <hr className="custom-swiper-navigation--hide-mobile" />
         <div
-          className='custom-swiper-navigation__control'
+          className="custom-swiper-navigation__control"
           onClick={() => swipeInstance?.slideNext()}
         >
           <RightArrow />
@@ -51,25 +51,25 @@ const TeamSwiper = ({ data }) => {
         {data.map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              <div className='teammember__card'>
-                <div className='teammember__card-img-container'>
+              <div className="teammember__card">
+                <div className="teammember__card-img-container">
                   <img src={item.photo.file.url} />
                 </div>
-                <p className='teammember__title'>{item.title}</p>
-                <h3 className='teammember__name'>{item.name}</h3>
-                <div
+                <p className="teammember__title">{item.title}</p>
+                <h3 className="teammember__name">{item.name}</h3>
+                {/* <div
                   className='teammember__bio'
                   style={{ whiteSpace: 'pre-line' }}
                 >
                   <Markdown value={item.bio.bio} />
-                </div>
+                </div> */}
               </div>
             </SwiperSlide>
-          );
+          )
         })}
       </Swiper>
     </div>
-  );
-};
+  )
+}
 
-export default TeamSwiper;
+export default TeamSwiper
